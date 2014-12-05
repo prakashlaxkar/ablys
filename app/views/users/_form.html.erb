@@ -1,10 +1,43 @@
 <%= form_for @user, :html => { :class => 'form-horizontal' } do |f| %>
   <div class="control-group">
-    <%= f.label :name, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :name, :class => 'text_field hindi' %>
+    <!-- <div class="controls col-md-12 row"> -->
+        <div class="col-md-6 pull-left">
+          <%= f.label :name, :class => 'control-label' , :class => 'col-md-2' %>
+          <%= f.text_field :name, :class => 'text_field col-md-4' %>
+        </div>
+
+        <div class="col-md-6 pull-right">
+          <%= f.label :f_name, :class => 'control-label', :class => 'col-md-2' %>
+          <%= f.text_field :f_name, :class => 'text_field' %>
+        </div>
     </div>
-  </div>
+  <!-- </div> -->
+
+    <div class="controls">
+      <%= f.label :gender, :class => 'control-label', :class => 'col-md-2' %>
+      <%= f.text_field :gender, :class => 'text_field' %>
+    </div>
+
+    <div class="controls">
+      <%= f.label :email, :class => 'control-label', :class => 'col-md-2' %>
+      <%= f.text_field :email, :class => 'text_field' %>
+    </div>
+
+    <div class="controls">
+      <%= f.label :city, :class => 'control-label', :class => 'col-md-2' %>
+      <%= f.text_field :city, :class => 'text_field' %>
+    </div>
+
+    <div class="controls">
+      <%= f.label :state, :class => 'control-label', :class => 'col-md-2' %>
+      <%= f.text_field :state, :class => 'text_field' %>
+    </div>
+
+    <div class="controls">
+      <%= f.label :phone, :class => 'control-label', :class => 'col-md-2' %>
+      <%= f.text_field :phone, :class => 'text_field' %>
+    </div>
+  <!-- </div> -->
 
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
