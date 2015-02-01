@@ -1,4 +1,5 @@
 Ablys::Application.routes.draw do
+  devise_for :users
   resources :users
   resource :home
 
