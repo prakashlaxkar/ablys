@@ -42,5 +42,5 @@ Ablys::Application.configure do
     :password             => 'prakashkiran',
     :authentication       => 'plain',
     :enable_starttls_auto => true  }
-  }
+  
 end
