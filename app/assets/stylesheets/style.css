@@ -34,8 +34,8 @@ border-radius:0 0 5px 5px;}
 
 
 
-#content{ margin:32px 0 0 0;}
-.post-sidebar{ width:680px; float:left; background:#fff; border:1px solid #DBDBDB; padding:12px 15px}
+#content{ margin:5px 0;}
+.post-sidebar{ width:680px; min-height: 450px; float:left; background:#fff; border:1px solid #DBDBDB; padding:12px 15px}
 .banner{ border-bottom:1px solid #CCCCCC; padding-bottom:10px}
 .banner h3{ font-size:16px; color:#4E5152; font-weight:bold; margin-bottom:12px; }
 .banner img{ float:left; margin-right:10px;}
@@ -47,16 +47,16 @@ h2.title{ font-size:18px;color:#059CE2; padding:16px 0 10px 0 }
 
 
 .right-sidebar{ width:267px; float:right;}
-.title-right{background:url(../images/menu-bg.jpg) repeat-x; height:35px; font-size:13px; font-weight:bold; color:#fff; line-height:34px; padding:0 0 0 15px}
+.title-right{background:url(/assets/menu-bg.jpg) repeat-x; height:35px; font-size:13px; font-weight:bold; color:#fff; line-height:34px; padding:0 0 0 15px}
 .right-box{ background:#fff;border:1px solid #DBDBDB; padding:12px 15px; margin-bottom:20px;}
 ul.menu-list{ padding:0px;}
-ul.menu-list li{ list-style:none; background:url(../images/arrow.jpg) left no-repeat; padding:3px 0 3px 15px; }
+ul.menu-list li{ list-style:none; background:url(/assets/arrow.jpg) left no-repeat; padding:3px 0 3px 15px; }
 ul.menu-list li a{ text-decoration:none; color:#059CE2;}
 ul.menu-list li a:hover{ color:#000;}
 
 #footer{  height:91px; position:relative; margin-top:-40px; z-index:100;}
 
-.copyright{background:url(../images/menu-bg.jpg) repeat-x; height:35px;border-radius:5px;-moz-border-radius:5px; color:#fff; text-align:center; line-height:34px;}
+.copyright{background:url(/assets/menu-bg.jpg) repeat-x; height:35px;border-radius:5px;-moz-border-radius:5px; color:#fff; text-align:center; line-height:34px;}
 .ft-bg{padding-top:41px;}
 .title2 {
 margin:0 0px;
