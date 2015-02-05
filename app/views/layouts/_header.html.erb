@@ -3,43 +3,51 @@
 			<%= image_tag("logo.png") %>
 		</div>
 		<div style="float:right">
-			<div class="login"><a href="/users/sign_up">Register</a> <a href="/users/sign_in" style="border:none">Log in</a></div>
+			<div class="login"><a href="/users/sign_up">Register</a>
+				<% if user_signed_in? %> 
+					<%= link_to "Log out", destroy_user_session_path, :method => :delete, :style => 'border:none;' %>
+				<% else %>
+					<a href="/users/sign_in" style="border:none">Log in</a>
+				<% end %>
+			</div>
 		</div>
 	</div>
 	<div class="menu">
-     <ul id="nav" class="menu"><li id="menu-item-24" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-16 current_page_item menu-item-24"><a href="/">Home</a></li>
-<li id="menu-item-2475" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2475"><a href="http://lakherasamaj.com/%E0%A4%B2%E0%A4%96%E0%A5%87%E0%A4%B0%E0%A4%BE-%E0%A4%9C%E0%A4%BE%E0%A4%A4%E0%A4%BF%E2%80%8D-%E0%A4%95%E0%A4%BE-%E0%A4%87%E0%A4%A4%E0%A4%BF%E2%80%8D%E0%A4%B9%E0%A4%BE%E0%A4%B8/">About Samaj</a>
-<ul class="sub-menu">
-	<li id="menu-item-2477" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2477"><a href="http://lakherasamaj.com/%E0%A4%B2%E0%A4%96%E0%A5%87%E0%A4%B0%E0%A4%BE-%E0%A4%9C%E0%A4%BE%E0%A4%A4%E0%A4%BF%E2%80%8D-%E0%A4%95%E0%A4%BE-%E0%A4%87%E0%A4%A4%E0%A4%BF%E2%80%8D%E0%A4%B9%E0%A4%BE%E0%A4%B8/">About Samaj</a></li>
-	<li id="menu-item-2476" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2476"><a href="http://lakherasamaj.com/%E0%A4%9A%E0%A5%88%E0%A4%A8%E0%A4%BE-%E0%A4%95%E0%A5%81%E0%A4%B6%E0%A4%B2%E0%A4%BE-%E0%A4%AE%E0%A4%BE%E0%A4%A4%E0%A4%BE-%E0%A4%95%E0%A4%BE-%E0%A4%9C%E0%A5%80%E0%A4%B5%E0%A4%A8/">About Chaina Mata</a></li>
-	<li id="menu-item-54" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-54"><a href="http://lakherasamaj.com/phot-gallery/">Photo Gallery</a></li>
-</ul>
-</li>
-<li id="menu-item-15" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15"><a href="http://lakherasamaj.com/members/">Members</a></li>
-<li id="menu-item-23" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23"><a href="http://lakherasamaj.com/matrimony/">Mermber Profile</a>
-<ul class="sub-menu">
-	<li id="menu-item-590" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-590"><a href="http://lakherasamaj.com/matrimony/">Mermber Profile</a></li>
-	<li id="menu-item-62" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-62"><a href="http://lakherasamaj.com/telephone-directory/">Telephone Directory</a></li>
-</ul>
-</li>
-<li id="menu-item-2474" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2474"><a href="http://lakherasamaj.com/category/events/">Events</a></li>
-<li id="menu-item-2473" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2473"><a href="http://lakherasamaj.com/category/articles/">Articles</a></li>
-<li id="menu-item-641" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-641"><a href="http://lakherasamaj.com/category/jobs/">Education &amp; Career</a>
-<ul class="sub-menu">
-	<li id="menu-item-742" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-742"><a href="http://lakherasamaj.com/appointment/">Appointment</a></li>
-	<li id="menu-item-653" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-653"><a href="http://lakherasamaj.com/category/jobs/">Education &amp; Career</a></li>
-</ul>
-</li>
-<li id="menu-item-12" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12"><a href="http://lakherasamaj.com/contact-us/">Contact Us</a>
-<ul class="sub-menu">
-	<li id="menu-item-642" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-642"><a href="http://lakherasamaj.com/contact-us/">Contact Us</a></li>
-	<li id="menu-item-355" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-355"><a href="http://lakherasamaj.com/post-add/">Post Add</a></li>
-	<li id="menu-item-279" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-279"><a href="http://lakherasamaj.com/about-us/">About Us</a></li>
-</ul>
-</li>
-<li id="menu-item-215" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-215"><a href="http://lakherasamaj.com/register/">Register</a></li>
-</ul>      <div class="clr"></div>
-    </div>
+    <ul id="nav" class="menu">
+     	<li id="menu-item-24" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-16 current_page_item menu-item-24"><a href="/">Home</a></li>
+			<li id="menu-item-2475" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2475"><a href="#">About Samaj</a>
+				<ul class="sub-menu">
+					<li id="menu-item-2477" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2477"><a href="#">About Samaj</a></li>
+					<li id="menu-item-2476" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2476"><a href="#">About Chaina Mata</a></li>
+					<li id="menu-item-54" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-54"><a href="gallery/">Photo Gallery</a></li>
+				</ul>
+			</li>
+			<li id="menu-item-15" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15"><a href="members/">Members</a></li>
+			<li id="menu-item-23" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23"><a href="matrimony/">Mermber Profile</a>
+				<ul class="sub-menu">
+					<li id="menu-item-590" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-590"><a href="matrimony/">Mermber Profile</a></li>
+					<li id="menu-item-62" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-62"><a href="directory/">Telephone Directory</a></li>
+				</ul>
+			</li>
+			<li id="menu-item-2474" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2474"><a href="events/">Events</a></li>
+			<li id="menu-item-2473" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2473"><a href="articles/">Articles</a></li>
+			<li id="menu-item-641" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-641"><a href="jobs/">Education &amp; Career</a>
+				<ul class="sub-menu">
+					<li id="menu-item-742" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-742"><a href="#">Appointment</a></li>
+					<li id="menu-item-653" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-653"><a href="jobs/">Education &amp; Career</a></li>
+				</ul>
+			</li>
+			<li id="menu-item-12" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12"><a href="us/">Contact Us</a>
+				<ul class="sub-menu">
+					<li id="menu-item-642" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-642"><a href="#">Contact Us</a></li>
+					<li id="menu-item-355" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-355"><a href="#">Post Add</a></li>
+					<li id="menu-item-279" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-279"><a href="#">About Us</a></li>
+				</ul>
+			</li>
+			<li id="menu-item-215" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-215"><a href="http://lakherasamaj.com/register/">Register</a></li>
+		</ul>
+		<div class="clr"></div>
+  </div>
 
 <style type="text/css">
 	.login a {
