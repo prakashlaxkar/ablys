@@ -7,6 +7,10 @@ gem 'rails', '4.0.1'
 gem 'mysql2'
 gem 'devise'
 gem "paperclip", "~> 4.2"
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-linkedin'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 

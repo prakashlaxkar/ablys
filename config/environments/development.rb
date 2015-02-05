@@ -29,7 +29,7 @@ Ablys::Application.configure do
   # number of complex assets.
   config.assets.debug = true
 
-  config.action_mailer.default_url_options = { :host => 'www.ablys.org' }
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   config.action_mailer.delivery_method = :sendmail
   config.action_mailer.perform_deliveries = true
 
