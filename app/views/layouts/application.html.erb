@@ -2,54 +2,40 @@
 <html>
 <head>
   <title>Ablys</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag 	"application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div id='top'>
-    <div class='container'>
+  <div id="wrapper">
+  	<div id="page">
       <%= render 'layouts/header' %>
-      <%= yield %>
+      <div id="content">
+      	<%= yield %>
+      </div>
+      <%= render 'layouts/footer' %>
     </div>
   </div>
-  <div style="clear:both"></div>
-  <%= render 'layouts/footer' %>
+   <div id="backtotop"><a href="#"></a></div>
+    <!--Wrapper End-->
+
+    <!-- jQuery Layerslider -->
+    <script type="text/javascript">
+        jQuery(window).load(function () {
+            jQuery('#layerslider.slideritems').layerSlider({
+                skinsPath: 'images/layerslider-skins/',
+                skin: 'smartgroup',
+                autoStart: true
+            });
+        });
+    </script>
+
+    <script type="text/javascript">
+        var main_menu = new main_menu.dd("main_menu");
+        main_menu.init("main_menu", "menuhover");
+    </script>
 </body>
 </html>
 
 <style type="text/css">
-	body {
-		font-family: Verdana, Arial, Helvetica, sans-serif;
-		font-size: 12px;
-		color: #333333;
-		background: url('/assets/body.png');
-		line-height: 17px;
-		}
-	.menu ul {
-		padding: 0px 0 0 10px;
-	}
-	.menu {
-		padding: 0px;
-		background: url('/assets/menu-bg.jpg') repeat-x;
-		height: 35px;
-		border-radius: 5px 5px 0px 0px;
-		-moz-border-radius: 5px 5px 0px 0px;
-		}
-
-	element.style {
-}
-
-#nav li {
-	margin-left: 5px;
-	display: inline-block;
-	float: left;
-	}
-.menu ul li {
-	float: left;
-	list-style: none;
-	display: block;
-	/* background: url(../images/menu-strock.jpg) no-repeat right; */
-	height: 35px;
-}
 </style>
