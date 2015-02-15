@@ -1,50 +1,55 @@
-<%= form_for @user, :html => { :class => 'form-horizontal' } do |f| %>
-  <div class="control-group">
-    <!-- <div class="controls col-md-12 row"> -->
-        <div class="col-md-6 pull-left">
-          <%= f.label :name, :class => 'control-label' , :class => 'col-md-2' %>
-          <%= f.text_field :name, :class => 'text_field col-md-4' %>
-        </div>
-
-        <div class="col-md-6 pull-right">
-          <%= f.label :f_name, :class => 'control-label', :class => 'col-md-2' %>
-          <%= f.text_field :f_name, :class => 'text_field' %>
-        </div>
+<%= form_for @user, :html => { :class => 'form-horizontal' } do |f| %>  
+    <div style ="float:left;margin-right:20px;">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
     </div>
-  <!-- </div> -->
-
-    <div class="controls">
-      <%= f.label :gender, :class => 'control-label', :class => 'col-md-2' %>
-      <%= f.text_field :gender, :class => 'text_field' %>
+    <div style ="float:left;">
+      <%= f.label :f_name %>
+      <%= f.text_field :f_name %>
     </div>
 
-    <div class="controls">
-      <%= f.label :email, :class => 'control-label', :class => 'col-md-2' %>
-      <%= f.text_field :email, :class => 'text_field' %>
+    <div style="clear:both;"></div>
+    <div style ="float:left;margin-right:20px;">
+      <%= f.label :gender %>
+      <%= f.text_field :gender %>
     </div>
 
-    <div class="controls">
-      <%= f.label :city, :class => 'control-label', :class => 'col-md-2' %>
-      <%= f.text_field :city, :class => 'text_field' %>
+    <div style ="float:left;">
+      <%= f.label :email %>
+      <%= f.text_field :email %>
     </div>
 
-    <div class="controls">
-      <%= f.label :state, :class => 'control-label', :class => 'col-md-2' %>
-      <%= f.text_field :state, :class => 'text_field' %>
+    <div style="clear:both;"></div>
+    <div style ="float:left;margin-right:20px;">
+      <%= f.label :city %>
+      <%= f.select :city, options_for_select(User.city), {:include_blank => 'Please Select'} %>
     </div>
 
-    <div class="controls">
-      <%= f.label :phone, :class => 'control-label', :class => 'col-md-2' %>
-      <%= f.text_field :phone, :class => 'text_field' %>
+    <div style ="float:left;">
+      <%= f.label :state %>
+      <%= f.select :state, options_for_select(User.state), {:include_blank => 'Please Select'} %>
     </div>
 
-    <div class="controls">
+    <div style="clear:both;"></div>
+    <div style ="float:left;margin-right:20px;">
+      <%= f.label :phone %>
+      <%= f.text_field :phone %>
+    </div>
+
+    <div style ="float:left;margin-right:-45px;">
+      <%= f.label :upload_photo %>
       <%= f.file_field :avatar %>
-    </div>
+    </div> 
 
-  <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                users_path, :class => 'btn' %>
+    <div style="clear:both;"></div>
+  <div style ="float:left;margin-bottom:50px;">
+    <%= f.button "Create Member" %>
+    <%= link_to button_tag('cancel', nil), users_path, :class => 'btn' %>
   </div>
 <% end %>
+
+<style type="text/css">
+  #user_avatar {
+    border: none;
+  }
+</style>
