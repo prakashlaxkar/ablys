@@ -44,7 +44,8 @@ end
 # gem 'unicorn'
 
 # Use Capistrano for deployment
-# gem 'capistrano', group: :development
+gem 'capistrano', '~> 2.15.5'
+gem "non-stupid-digest-assets"
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
