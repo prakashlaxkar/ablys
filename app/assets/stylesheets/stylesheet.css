@@ -600,7 +600,7 @@ a, a:hover
 	width: 1011px;
 	height: auto;
 	float: left;
-	padding-top: 17px;
+	padding-top: 8px;
 	padding-bottom: 11px;
 	background-color: #BF0000;
 }
@@ -618,6 +618,7 @@ a, a:hover
 	width: 740px;
 	height: auto;
 	float: left;
+  margin-top: 12px;
 }
 
 .search
@@ -2861,7 +2862,7 @@ h6 {
 #visionbox {
 	width: 200px;
 	float: left;
-	margin-left: 14px;
+	margin-left: 10px;
 	border: 2px solid #009AD0;
 	margin-bottom: 5px;
 	padding: 5px;
