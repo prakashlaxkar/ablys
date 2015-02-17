@@ -46,6 +46,7 @@ end
 # Use Capistrano for deployment
 gem 'capistrano', '~> 2.15.5'
 gem "non-stupid-digest-assets"
+gem 'pry'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]

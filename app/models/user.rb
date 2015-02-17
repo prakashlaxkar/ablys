@@ -21,7 +21,8 @@ class User < ActiveRecord::Base
                             provider:oauth_raw_data.provider,
                             uid:oauth_raw_data.uid,
                             email:oauth_user_data.email,
-                            password:Devise.friendly_token[0,20],
+                            avatar: URI.parse(oauth_raw_data.info.image.gsub("http","https")),
+                            password:Devise.friendly_token[0,20]
                           )
   end
 
