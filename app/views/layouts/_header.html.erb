@@ -43,20 +43,20 @@
             <section id="slider">
             	<div class="line-op"></div>
               <div id="layerslider" class="slideritems ls-container ls-smartgroup" style="position: relative;">
-              	<div class="ls-inner" style="width: 750px; height: 220px; background-color: transparent;">
+              	<div class="ls-inner" style="width: 1011px; height: 220px; background-color: transparent;">
                   <div class="ls-layer" id="ls-layer-1" data-rel="slidedelay: 3000;" style="visibility: visible; width: 0px; height: 220px; display: none; left: 0px; right: auto; top: 0px; bottom: auto;">
-                      <img class="ls-bg" src="/assets/banner1.jpg" alt="layer" style="margin-left: -375px; margin-top: -110px;"></div>
+                      <img class="ls-bg" src="/assets/banner1.jpg" alt="layer" style="margin-left: -505.5px; margin-top: -130px;"></div>
                   <div class="ls-layer" id="ls-layer-2" data-rel="slidedelay: 3000;" style="width: 0px; height: 220px; display: none; visibility: visible; left: 0px; right: auto; top: 0px; bottom: auto;">  
-                      <img class="ls-bg" src="/assets/banner2.jpg" alt="layer" style="margin-left: -375px; margin-top: -110px;">
+                      <img class="ls-bg" src="/assets/banner2.jpg" alt="layer" style="margin-left: -505.5px; margin-top: -130px;">
                   </div>
-                  <div class="ls-layer ls-active" id="ls-layer-3" data-rel="slidedelay: 3000;" style="width: 750px; height: 220px; display: none; visibility: visible; left: auto; right: 0px; top: 0px; bottom: auto;">
-                      <img class="ls-bg" src="/assets/banner3.jpg" alt="layer" style="margin-left: -375px; margin-top: -110px;">
+                  <div class="ls-layer ls-active" id="ls-layer-3" data-rel="slidedelay: 3000;" style="width: 1011px; height: 220px; display: none; visibility: visible; left: auto; right: 0px; top: 0px; bottom: auto;">
+                      <img class="ls-bg" src="/assets/banner3.jpg" alt="layer" style="margin-left: -505.5px; margin-top: -130px;">
                   </div>
                   <div class="ls-layer" id="ls-layer-4" data-rel="slidedelay: 3000;" style="width: 0px; height: 220px; display: none; visibility: visible; left: 0px; right: auto; top: 0px; bottom: auto;">
-                      <img class="ls-bg" src="/assets/banner4.jpg" alt="layer" style="margin-left: -375px; margin-top: -110px;">
+                      <img class="ls-bg" src="/assets/banner4.jpg" alt="layer" style="margin-left: -505.5px; margin-top: -130px;">
                   </div>
                   <div class="ls-layer" id="ls-layer-5" data-rel="slidedelay: 3000;" style="width: 0px; height: 220px; display: none; visibility: visible; left: 0px; right: auto; top: 0px; bottom: auto;">    
-                      <img class="ls-bg" src="/assets/banner5.jpg" alt="layer" style="margin-left: -375px; margin-top: -110px;">
+                      <img class="ls-bg" src="/assets/banner5.jpg" alt="layer" style="margin-left: -505.5px; margin-top: -130px;">
                   </div>
                 </div>
               <a class="ls-nav-prev" href="#"></a><a class="ls-nav-next" href="#"></a><div class="ls-bottom-nav-wrapper"><a class="ls-nav-start" href="#"></a><span class="ls-bottom-slidebuttons"><a href="#" class=""></a><a href="#" class=""></a><a href="#" class="ls-nav-active"></a><a href="#" class=""></a><a href="#" class=""></a><a href="#" class=""></a><a href="#" class=""></a><a href="#" class=""></a></span><a class="ls-nav-stop" href="#"></a></div></div>
@@ -66,37 +66,5 @@
       </div>
     </div>
   </div>
-  <div class="results">
-    <% unless user_signed_in? %>
-      <div class="boxfont1 boxheading boxborder ">
-        <h1>Log-in</h1>
-      </div>
-      <div style="margin-top: 10px; margin-left: 10px;">
-        <div>
-          <%= form_for :user, :url => '/users/sign_in' do |f| %>
-            <div style="width:100%;">
-              <span>User Name</span>
-              <span><%= f.email_field 'email'%></span>
-            </div>
-            <div>
-              <span>Password</span>
-              <span><%= f.password_field 'password'%></span>
-            </div>
-            <div>
-              <span style='float:left;'>
-                <%= f.submit 'Log In', :style => 'width:90px;' %>
-              </span>
-              <span style="float: right; margin: 25px 15px 0px 0px;"><a href="/users/auth/facebook" style="float: right; margin: -25px 15px 0px 0px;"><img alt="Fb_login" src="/assets/fb_login.png" /></a></span>
-            </div>
-          <% end %>
-        </div>
-        <div style="width:100%;float:left;">
-          <span align="center" style="padding-top:7px;float:left;"><a href="/users/sign_up">Register</a></span>
-          <span align="center" style="padding:7px 15px 0px 0px;float:right;"><a href="/users/password/new">Forgot Password</a></span>
-        </div>
-      </div>
-    <% else %>
-      <%= link_to "Log out", destroy_user_session_path, :method => :delete, :style => 'border:none;' %>
-    <% end %>
-  </div>
+  
 </div>
