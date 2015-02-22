@@ -735,96 +735,96 @@ ul#main_menu
 	list-style: none;
 }
 
-    ul#main_menu *
-    {
-        margin: 0;
-        padding: 0;
-    }
-
-    ul#main_menu li
-    {
-	position: relative;
-	background: url(/assets/divater.png) right no-repeat;
-	float: left;
-	padding-left: 13px;
-	padding-right: 13px;
-	height: 20px;
-	padding-top: 13px;
-    }
-
-        ul#main_menu li a
-        {
-	color: #FFFFFF;
-	text-transform: uppercase;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 10.5px;
-	font-weight: Bold;
-        }
-
-            ul#main_menu li a:hover
-            {
-	color: #32AB5C;
-            }
-
-        ul#main_menu li.selected a
-        {
-            color: #f8a94d;
-        }
-
-    ul#main_menu ul
-    {
-        position: absolute;
-        top: 37px;
-        left: 0px;
-        display: none;
-        opacity: 0;
-        list-style: none;
-    }
-
-        ul#main_menu ul li
+ul#main_menu *
 {
-    position: relative;
-    width: 150px;
-    padding: 0px;
-    background: #BF0000;
-    border: #fff200 solid 1px;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 6px;
-    margin-bottom: 2px;
+    margin: 0;
+    padding: 0;
 }
 
-            ul#main_menu ul li a
-            {
-	display: block;
-	color: #FFF;
-	font-size: 10.5px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 6px;
-	
-	font: Normal 10.5px Arial, Helvetica, sans-serif;
-	color: #FFF;
-	text-transform: none;
-	padding-top: 4px;
-	padding-right: 10px;
-	padding-left: 10px;
-            }
+ul#main_menu li
+{
+  position: relative;
+  /*background: url(/assets/divater.png) right no-repeat;*/
+  float: left;
+  padding-left: 30px;
+  padding-right: 28px;
+  height: 20px;
+  padding-top: 13px;
+}
 
-    ul#main_menu li.selected ul li a
+ul#main_menu li a
+{
+color: #FFFFFF;
+text-transform: uppercase;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 10.5px;
+font-weight: Bold;
+}
+
+    ul#main_menu li a:hover
     {
-        color: #FFFFFF;
+color: #32AB5C;
     }
 
-        ul#main_menu li.selected ul li a:hover
-        {
-            color: #f8a94d;
-        }
-
-    ul#main_menu ul li a:hover
+ul#main_menu li.selected a
 {
-    background-color: #008040;
-    color: #FFF;
-    display: block;
-    padding-bottom: 2px;
+    color: #f8a94d;
+}
+
+ul#main_menu ul
+{
+position: absolute;
+top: 37px;
+left: 0px;
+display: none;
+opacity: 0;
+list-style: none;
+}
+
+ul#main_menu ul li
+{
+position: relative;
+width: 150px;
+padding: 0px;
+background: #BF0000;
+border: #fff200 solid 1px;
+-moz-border-radius: 3px;
+-webkit-border-radius: 6px;
+margin-bottom: 2px;
+}
+
+    ul#main_menu ul li a
+    {
+display: block;
+color: #FFF;
+font-size: 10.5px;
+-moz-border-radius: 3px;
+-webkit-border-radius: 6px;
+
+font: Normal 10.5px Arial, Helvetica, sans-serif;
+color: #FFF;
+text-transform: none;
+padding-top: 4px;
+padding-right: 10px;
+padding-left: 10px;
+    }
+
+ul#main_menu li.selected ul li a
+{
+color: #FFFFFF;
+}
+
+ul#main_menu li.selected ul li a:hover
+{
+    color: #f8a94d;
+}
+
+ul#main_menu ul li a:hover
+{
+background-color: #008040;
+color: #FFF;
+display: block;
+padding-bottom: 2px;
 }
 
 .apply
