@@ -1875,7 +1875,7 @@ select[multiple].form-group-lg .form-control {
   .form-horizontal .form-group-sm .control-label {
     padding-top: 6px;
   }
-}offset-2 {
+  .offset-2 {
     margin-left: 16.66666667%;
   }
   .col-sm-offset-1 {
