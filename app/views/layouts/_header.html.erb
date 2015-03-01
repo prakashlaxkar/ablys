@@ -26,16 +26,19 @@
             </li>
             <li><a href="#">Gallery</a>
             </li>
-            <li><a href="#">Testimonials</a>
-            </li><li><a href="#"></a>
-            </li><li><a href="#"></a>
-            </li><li><a href="#"></a>
+            <li><a href="#">Matrimony</a>
             </li>
-            </li><li><a href="#"></a>
-            </li>
-            <li><a href="#">Registor</a>
-            </li>
-            <li><a href="/users/sign_in">Log In</a>
+            <li style="float:right;text-align:center;">
+              <% if user_signed_in? %>
+                <%= link_to "#{current_user.name}", '#' %>
+                 <ul>
+                    <li><%= link_to 'My Profile', user_path(current_user) %></li>
+                    <li><%= link_to 'Log Out', destroy_user_session_path, :method => :delete %></li>
+                  </ul>
+              <% else %>
+                <%= link_to 'Sign Up','#', "data-toggle"=>"modal", "data-target"=>"#sign_up" %> |
+                <%= link_to 'Sign In','#', "data-toggle"=>"modal", "data-target"=>"#sign_in" %>
+              <% end %>
             </li> 
           </ul>
         </div>
@@ -73,3 +76,33 @@
   </div>
   
 </div>
+
+<div class="modal fade" id="sign_in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Sign In</h4>
+      </div>
+        <%= render :template => '/devise/sessions/new'%>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="sign_up" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Sign Up</h4>
+      </div>
+        <%= render :template => '/devise/registrations/new'%>
+    </div>
+  </div>
+</div>
+
+<style type="text/css">
+  #sign_in .modal-dialog{
+    width: 470px;
+  }
+</style>

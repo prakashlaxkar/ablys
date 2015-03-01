@@ -153,7 +153,7 @@ input[type="color"],
 input,
 textarea,
 .uneditable-input {
-  width: 166px;
+  width: 220px;
 }
 
 textarea {
@@ -243,7 +243,7 @@ input[type="file"] {
 }
 
 select {
-  width: 180px;
+  width: 230px;
   background-color: #ffffff;
   border: 1px solid #cccccc;
 }
@@ -2897,4 +2897,3 @@ h6 {
 	display: block;
 	color: #000000;
 }
-*/*/

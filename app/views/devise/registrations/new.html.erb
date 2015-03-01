@@ -1,29 +1,50 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), :remote => true) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+  <div class="modal-body">
+    <div class="row">
+      <div class='error'></div>
+      <div class="col-md-4">
+        <%= f.label :name %>
+        <%= f.text_field :name, :autofocus => true %>
+      </div>
+      <div class="col-md-4">
+        <%= f.label :email %>
+        <%= f.email_field :email %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <%= f.label :password %>
+        <%= f.password_field :password, autocomplete: "off" %>
+      </div>
+      <div class="col-md-4">
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      </div>
+    </div>
+    <div style="min-height: 5px;"></div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @validatable %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+    <div class="row">
+      <div class="col-md-12">
+        <%= f.submit 'Sign Up', :class => 'btn btn-primary' %>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+    <div style="min-height: 5px;"></div>
   </div>
 <% end %>
+<div class="modal-footer">
+  <%- if devise_mapping.omniauthable? %>
+    <%- resource_class.omniauth_providers.each do |provider| %>
+      <%= link_to image_tag("facebook-login-button.gif"), omniauth_authorize_path(resource_name, provider) %>
+    <% end -%>
+  <% end -%>
+</div>
 
-<%= render "devise/shared/links" %>
+
+<style type="text/css">
+  .row {margin-right: 0px;}
+  .col-md-4 {display: inline-table;}
+</style>
+

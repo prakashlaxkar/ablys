@@ -3,7 +3,7 @@
 <head>
   <title>Ablys</title>
   <%= stylesheet_link_tag 	"application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -149,25 +149,27 @@
     </div>
   </div>
    <div id="backtotop"><a href="#"></a></div>
-    <!--Wrapper End-->
+   <script type="text/javascript">
+		  jQuery(window).load(function () {
+			  jQuery('#layerslider.slideritems').layerSlider({
+			    skinsPath: 'images/layerslider-skins/',
+			    skin: 'smartgroup',
+			    autoStart: true
+			  });
+			});
 
-    <!-- jQuery Layerslider -->
-    <script type="text/javascript">
-        jQuery(window).load(function () {
-            jQuery('#layerslider.slideritems').layerSlider({
-                skinsPath: 'images/layerslider-skins/',
-                skin: 'smartgroup',
-                autoStart: true
-            });
-        });
-    </script>
 
-    <script type="text/javascript">
-        var main_menu = new main_menu.dd("main_menu");
-        main_menu.init("main_menu", "menuhover");
-    </script>
+			var main_menu = new main_menu.dd("main_menu");
+			main_menu.init("main_menu", "menuhover");
+		</script>
 </body>
 </html>
 
 <style type="text/css">
+	.boxcotent select{
+		width: 180px !important;
+	}
+	.boxcotent input{
+		width: 168px !important;
+	}
 </style>
