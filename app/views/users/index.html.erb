@@ -1,11 +1,9 @@
 <div style="border:1px solid #d6d6d6;margin-top:10px;">
   <div style="">
         <div style="background-color:#BE0C0C; padding:9px 3px 0px 15px;">
-      <form class="standard-form basic-information" method="post" action="./Matrimonial Services   Lakherasamaj_files/Matrimonial Services   Lakherasamaj.html" enctype="multipart/form-data"> 
-      <!--<input type="hidden" name="page" value=""  />-->
-        <input type="text" name="sname" value="Enter Name" style="width:85px; padding:3px 0px 3px 3px; " onfocus="if(this.value==&#39;Enter Name&#39;)this.value=&#39;&#39;;" onblur="if(this.value==&#39;&#39;)this.value=&#39;Enter Name&#39;;">&nbsp;&nbsp;
-        
-         <select name="sgender" style="width:104px;">
+      <form class="standard-form basic-information" method="post" action="./Matrimonial Services   Lakherasamaj_files/Matrimonial Services   Lakherasamaj.html" enctype="multipart/form-data">
+        <%= text_field_tag 'name', nil, style: 'width:175px;margin-right:6px;', placeholder: 'Enter Name' %>
+        <select name="sgender" style="width:104px;">
         <option value="">Looking for</option>
         <option value="Female" selected="selected">Bride </option>
         <option value="Male">Groom</option>
@@ -137,7 +135,7 @@
                 <option value="Uttar Pradesh">Uttar pradesh</option>
                 </select>&nbsp;&nbsp;
                 
-        <input type="submit" value="Search">
+        <%= button_tag 'Search', style: 'padding: 2px 7px;margin-top: -10px;' %>
        </form>
         </div>
         </div>
