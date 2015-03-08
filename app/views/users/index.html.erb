@@ -5,7 +5,7 @@
         <%= text_field_tag 'name', nil, style: 'width:175px;margin-right:6px;', placeholder: 'Enter Name' %>
         <select name="sgender" style="width:104px;">
         <option value="">Looking for</option>
-        <option value="Female" selected="selected">Bride </option>
+        <option value="Female">Bride </option>
         <option value="Male">Groom</option>
         </select>&nbsp;&nbsp;
                       <select name="sgotra" style="width:112px;">
@@ -152,7 +152,7 @@
       <table>
         <tr><td>Email :</td><td style="text-transform: none;"><%= user.email %> </td></tr>
         <tr>
-          <td>Date of Birth :</td><td><%= user.dob.strftime('%d-%m-%Y') %></td>
+          <td>Date of Birth :</td><td><%= user.dob.try(:strftime,'%d-%m-%Y') %></td>
           <td>Gender :</td><td><%= user.gender %></td>
         </tr>
         <tr><td>Gotra :</td><td><%= user.gotra %></td><td>Marital status :</td><td><%= user.marital_status %></td></tr>
