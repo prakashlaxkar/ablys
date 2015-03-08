@@ -1,11 +1,12 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, except: [:show, :index]
+  before_action :authenticate_user!, except: [:show, :index, :ablys_members]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @q = User.ransack(params[:q])
+    @users = @q.result(distinct: true)
   end
 
   # GET /users/1
@@ -16,6 +17,10 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
+  end
+
+  def ablys_members
+    @users = User.all
   end
 
   # GET /users/1/edit
@@ -70,6 +75,7 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :dob, :f_name, :gender, :email, :address, :city, :state, :country, :pin_code, :phone, :is_matrimony, :avatar)
+      params.require(:user).permit(:name, :dob, :f_name, :gender, :email, :address, :city, :state, :country, :pin_code, :phone, :is_matrimony, :avatar,
+        :gotra, :marital_status, :qualification, :designation, :company_name, :income)
     end
 end

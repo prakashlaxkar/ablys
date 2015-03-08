@@ -1,12 +1,18 @@
 Ablys::Application.routes.draw do
   devise_for :users, controllers: { sessions: "users/sessions", :registrations => 'users/registrations', :omniauth_callbacks => "users/omniauth_callbacks" }
-  resources :users
+  
   resource :home
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
+  resources :users do
+    collection do
+      get 'ablys_members'
+    end
+  end
+
   root 'home#index'
 
   # Example of regular route:

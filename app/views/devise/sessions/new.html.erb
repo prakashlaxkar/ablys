@@ -1,13 +1,16 @@
+<div class="modal-body">
 <%= form_for(resource, as: resource_name, url: session_path(resource_name), :remote => 'true') do |f| %>
-  <div class="modal-body">
     <div class="row">
-      <div class='error'></div>
-      <div class="col-md-7">
+      <div class='col-md-11 error'></div>
+    </div>
+    <div class="row">
+      <div class="col-md-11">
         <%= f.label :email %>
         <%= f.email_field :email, autofocus: true, :class => 'form-control' %>
       </div>
-
-      <div class="col-md-7">
+    </div>
+    <div class="row">
+      <div class="col-md-11">
         <%= f.label :password %>
         <%= f.password_field :password, autocomplete: "off", :class => 'form-control' %>
       </div>
@@ -26,8 +29,8 @@
       </div>
     </div>
     <div style="min-height: 5px;"></div>
-  </div>
 <% end %>
+</div>
 <div class="modal-footer">
     <%- if devise_mapping.omniauthable? %>
       <%- resource_class.omniauth_providers.each do |provider| %>
@@ -39,6 +42,7 @@
 
 <style type="text/css">
   .row {margin-right: 0px;}
+  .error {color: red;font-size: 14px;}
 </style>
 
 <%#= render "devise/shared/links" %>
