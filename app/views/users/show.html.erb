@@ -1,24 +1,33 @@
-<%- model_class = User -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+<div style="width:750px; padding: 10px 5px; font-size:13px;">
+    <div style="float:left; text-align:center; width:155px; padding:10px;">
+      <%= image_tag(@user.avatar(:medium), :width=>"150", :height=>"150") %><br>
+    </div>
+    <div style="float:left; padding: 10px;">
+      <div>
+        <%= link_to "<b>#{@user.name.titleize}</b>".html_safe, "javascript:void(0)", :style => 'font-size: 15px;' %>
+        <%= link_to "Edit Profile", edit_user_path(@user), :style => 'font-size: 15px;float:right' if current_user == @user %>
+      </div>
+      <table>
+        <tr><td>Email </td><td>:</td><td style="text-transform: none;"><%= @user.email %> </td></tr>
+        <tr><td>Father Name </td><td>:</td><td><%= @user.f_name %></td></tr>
+        <tr><td>Phone No. </td><td>:</td><td><%= @user.phone %></td></tr>
+        <tr><td>Date of Birth </td><td>:</td><td><%= @user.dob.try(:strftime,'%d-%m-%Y') %></td></tr>
+        <tr><td>Gender </td><td>:</td><td><%= @user.gender %></td></tr>
+        <tr><td>Gotra </td><td>:</td><td><%= @user.gotra %></td></tr>
+        <tr><td>Marital status </td><td>:</td><td><%= @user.marital_status %></td></tr>
+        <tr><td>Qualification </td><td>:</td><td><%= @user.qualification %></td></tr>
+        <tr><td>Designation</td><td>:</td><td><%= @user.designation %></td></tr>
+        <tr><td>Annual Income </td><td>:</td><td><%= @user.income %></td></tr>
+        <tr><td>Address </td><td>:</td><td><%= @user.address%></td></tr>
+        <tr><td>City </td><td>:</td><td><%= @user.city %></td></tr>
+        <tr><td>State </td><td>:</td><td><%= @user.state %></td></tr>
+      </table>              
+    </div>
+  <div style="clear:both;"></div>
 </div>
-
-<dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
-  <dd><%= @user.name %></dd>
-</dl>
-<div class='image'>
-  <%= image_tag(@user.avatar(:thumb)) %>
-</div>
-
-<div class="form-actions">
-  <%= link_to t('.back', :default => t("helpers.links.back")),
-              users_path, :class => 'btn'  %>
-  <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_user_path(@user), :class => 'btn' %>
-  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              user_path(@user),
-              :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %>
-</div>
+<style type="text/css">
+  td {font-size: 14px;text-transform: capitalize; vertical-align: top;padding: 5px;}
+  td:nth-child(1) {width: 125px;color: brown;}
+  td:nth-child(2) {width: 5px;color: brown;padding-right: 20px;}
+  td:nth-child(3) {width: 370px;}
+</style>

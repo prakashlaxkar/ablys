@@ -1,0 +1,40 @@
+<% @users.each do |user| %>
+  <div style="border:1px solid #d6d6d6;width:750px; padding-left:5px; font-size:13px;border-top: none;">
+    <div style="float:left; text-align:center; width:155px; padding:10px;">
+      <%= image_tag(user.avatar(:medium), :width=>"150", :height=>"150") %><br>
+    </div>
+    <div style="float:left; padding: 10px;">
+      <div>
+        <%= link_to "<b>#{user.name.titleize}</b>".html_safe, user_path(user), :style => 'font-size: 15px;' %>
+      </div>
+      <table>
+        <tr><td>Email :</td><td style="text-transform: none;"><%= user.email %> </td></tr>
+        <tr>
+          <td>Date of Birth :</td><td><%= user.dob.try(:strftime,'%d-%m-%Y') %></td>
+          <td>Gender :</td><td><%= user.gender %></td>
+        </tr>
+        <tr><td>Gotra :</td><td><%= user.gotra %></td><td>Marital status :</td><td><%= user.marital_status %></td></tr>
+        <tr>
+          <td>Address :</td><td><%= user.address%></td>
+          <td>City :</td><td><%= user.city %></td>
+        </tr>
+        <tr>
+          <td>Designation</td><td><%= user.designation %></td>
+          <td>Phone No. :</td><td><%= user.phone %></td>
+        </tr>
+      </table>              
+    </div>
+  <div style="clear:both;"></div>
+</div>
+<% end %>
+<div style="margin-bottom: 10px;"></div>
+
+<style type="text/css">
+  td:nth-child(odd) {padding-right: 6px;color: brown;}
+  td:nth-child(1) {width: 120px;}
+  td:nth-child(2) {width: 200px;}
+  td:nth-child(3) {width: 120px;}
+  td:nth-child(4) {width: 55px;}
+  td {font-size: 14px;text-transform: capitalize; vertical-align: top;}
+  select {width: 225px;margin-right: 5px;}
+</style>

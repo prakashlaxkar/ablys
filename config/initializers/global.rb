@@ -1,0 +1,2 @@
+$city = ["Ajmer", 'Bundi', "Kota", "Jaipur", "Jodhpur", "Tonk", "Udaipur", "Bhilwara", "Badmer", "Bikaner", "Gurgoan", "Rewadi"]
+$state = ["Rajasthan", "Maharastra", "Delhi", "Hariyana", "Uttar Predesh", "Madhya Predesh"]

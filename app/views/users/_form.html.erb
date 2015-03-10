@@ -1,55 +1,100 @@
-<%= form_for @user, :html => { :class => 'form-horizontal' } do |f| %>  
-    <div style ="float:left;margin-right:20px;">
+<%= form_for @user, :html => { :class => 'form' } do |f| %>  
+    <div class="left_box">
       <%= f.label :name %>
-      <%= f.text_field :name %>
+      <%= f.text_field :name, class: 'validate[required]' %>
     </div>
     <div style ="float:left;">
-      <%= f.label :f_name %>
-      <%= f.text_field :f_name %>
+      <%= f.label :father_name %>
+      <%= f.text_field :f_name, class: 'validate[required]' %>
     </div>
 
     <div style="clear:both;"></div>
-    <div style ="float:left;margin-right:20px;">
+    <div class="left_box" style="width: 230px;">
       <%= f.label :gender %>
-      <%= f.text_field :gender %>
+      <%= radio_button("user", "gender", "Male") %><span> Male </span><%= radio_button("user", "gender", "Female") %><span> Female</span>
     </div>
 
     <div style ="float:left;">
       <%= f.label :email %>
-      <%= f.text_field :email %>
+      <%= f.text_field :email, class: 'validate[required]' %>
     </div>
 
     <div style="clear:both;"></div>
-    <div style ="float:left;margin-right:20px;">
+
+    <div class="left_box">
+      <%= f.label :gotra %>
+      <%= f.text_field :gotra, class: 'validate[required]' %>
+    </div>
+    <div style ="float:left;">
+      <%= f.label :address %>
+      <%= f.text_field :address, class: 'validate[required]' %>
+    </div>
+
+    <div style="clear:both;"></div>
+
+    <div class="left_box">
       <%= f.label :city %>
-      <%= f.select :city, options_for_select(User.city), {:include_blank => 'Please Select'} %>
+      <%= f.select :city, options_for_select($city, @user.city), {:include_blank => 'Please Select'}, class: 'validate[required]' %>
     </div>
 
     <div style ="float:left;">
       <%= f.label :state %>
-      <%= f.select :state, options_for_select(User.state), {:include_blank => 'Please Select'} %>
+      <%= f.select :state, options_for_select($state, @user.state), {:include_blank => 'Please Select'}, class: 'validate[required]' %>
     </div>
 
     <div style="clear:both;"></div>
-    <div style ="float:left;margin-right:20px;">
+    <div class="left_box">
       <%= f.label :phone %>
-      <%= f.text_field :phone %>
+      <%= f.text_field :phone, class: 'validate[required]' %>
     </div>
 
-    <div style ="float:left;margin-right:-45px;">
+    <div class="left_box">
       <%= f.label :upload_photo %>
-      <%= f.file_field :avatar %>
+      <%= f.file_field :avatar, class: 'validate[required]' %>
     </div> 
 
     <div style="clear:both;"></div>
+
+    <div class="left_box">
+      <%= f.label :qualification %>
+      <%= f.text_field :qualification, class: 'validate[required]' %>
+    </div>
+    <div style ="float:left;">
+      <%= f.label :designation %>
+      <%= f.text_field :designation, class: 'validate[required]' %>
+    </div>
+
+    <div style="clear:both;"></div>
+
+    <div class="left_box">
+      <%= f.label :company_name %>
+      <%= f.text_field :company_name, class: 'validate[required]' %>
+    </div>
+    <div style ="float:left;">
+      <%= f.label :annual_income %>
+      <%= f.text_field :income, class: 'validate[required]' %>
+    </div>
+
+    <div style="clear:both;"></div>
+
+    <div style="clear:both;"></div>
+    <div class="left_box" style="width: 500px;padding: 10px 0px;">
+      <%#= f.label :registor_for_matrimony %>
+      <span> Do you want to registor for matrimony </span><%= f.check_box :is_matrimony %>
+    </div>
   <div style ="float:left;margin-bottom:50px;">
-    <%= f.button "Create Member" %>
-    <%= link_to button_tag('cancel', nil), users_path, :class => 'btn' %>
+    <%= f.button "Update Profile" %>
+    <%= link_to button_tag('cancel', nil), user_path(@user), :class => 'btn' %>
   </div>
 <% end %>
 
 <style type="text/css">
-  #user_avatar {
-    border: none;
-  }
+  #user_avatar { border: none; }
+  .left_box {float: left; margin-right: 100px;}
+  span {padding-right: 37px;padding-left: 5px;vertical-align: middle;font-size: 14px;}
+
 </style>
+
+<script type="text/javascript">
+  $(".form").validationEngine();
+</script>
