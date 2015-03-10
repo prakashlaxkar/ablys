@@ -3,6 +3,11 @@ Ablys::Application.routes.draw do
   
   resource :home
 
+  resources :events do
+    resources :videos
+    resources :images
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
