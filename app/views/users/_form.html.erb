@@ -9,14 +9,25 @@
     </div>
 
     <div style="clear:both;"></div>
-    <div class="left_box" style="width: 230px;">
+    <div class="left_box">
+      <%= f.label :email %>
+      <%= f.text_field :email, class: 'validate[required, custom[email]]' %>
+    </div>
+
+    <div style ="float:left;">
       <%= f.label :gender %>
       <%= radio_button("user", "gender", "Male") %><span> Male </span><%= radio_button("user", "gender", "Female") %><span> Female</span>
     </div>
 
+    <div style="clear:both;"></div>
+
+    <div class="left_box">
+      <%= f.label :date_of_birth %>
+      <%= f.date_field :dob, class: 'validate[required]' %>
+    </div>
     <div style ="float:left;">
-      <%= f.label :email %>
-      <%= f.text_field :email, class: 'validate[required]' %>
+      <%= f.label :marital_status  %>
+      <%= f.select :marital_status, options_for_select(["Single", "Married", "Divorced", "Widow"], @user.marital_status), {:include_blank => 'Please Select'}, class: 'validate[required]' %>
     </div>
 
     <div style="clear:both;"></div>
@@ -34,23 +45,23 @@
 
     <div class="left_box">
       <%= f.label :city %>
-      <%= f.select :city, options_for_select($city, @user.city), {:include_blank => 'Please Select'}, class: 'validate[required]' %>
+      <%= f.select :city, options_for_select($city, @user.city), {:include_blank => 'Select City'}, class: 'validate[required]' %>
     </div>
 
     <div style ="float:left;">
       <%= f.label :state %>
-      <%= f.select :state, options_for_select($state, @user.state), {:include_blank => 'Please Select'}, class: 'validate[required]' %>
+      <%= f.select :state, options_for_select($state, @user.state), {:include_blank => 'Select State'}, class: 'validate[required]' %>
     </div>
 
     <div style="clear:both;"></div>
     <div class="left_box">
       <%= f.label :phone %>
-      <%= f.text_field :phone, class: 'validate[required]' %>
+      <%= f.text_field :phone, class: 'validate[required, custom[phone]]' %>
     </div>
 
     <div class="left_box">
       <%= f.label :upload_photo %>
-      <%= f.file_field :avatar, class: 'validate[required]' %>
+      <%= f.file_field :avatar %>
     </div> 
 
     <div style="clear:both;"></div>
@@ -80,7 +91,8 @@
     <div style="clear:both;"></div>
     <div class="left_box" style="width: 500px;padding: 10px 0px;">
       <%#= f.label :registor_for_matrimony %>
-      <span> Do you want to registor for matrimony </span><%= f.check_box :is_matrimony %>
+      <span style="margin-right:55px;"> Do you want to registor for matrimony </span>
+      <%= radio_button("user", "is_matrimony", true) %><span> Yes </span><%= radio_button("user", "is_matrimony", false) %><span> No</span>
     </div>
   <div style ="float:left;margin-bottom:50px;">
     <%= f.button "Update Profile" %>
@@ -96,5 +108,7 @@
 </style>
 
 <script type="text/javascript">
-  $(".form").validationEngine();
+  $(document).ready(function(){
+    $(".form").validationEngine({promptPosition : "bottomLeft"});
+   });
 </script>
