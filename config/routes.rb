@@ -10,10 +10,14 @@ Ablys::Application.routes.draw do
   resources :users do
     collection do
       get 'ablys_members'
+      get 'matrimony_list'
     end
   end
 
   root 'home#index'
+
+  get 'about_samaj' => "home#about_samaj"
+  get 'about_bhajneri' => "home#about_bhajneri"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

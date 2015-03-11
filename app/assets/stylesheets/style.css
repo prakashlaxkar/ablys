@@ -1,0 +1,15 @@
+.TabbedPanelsContent{
+	display: block; text-align: justify;
+	font-size: 16px;
+	padding: 10px;
+}
+
+.TabbedPanelsTab {
+	text-align: center;
+	border: 1px solid;
+	background-color: #BF0000;
+	color: white;
+	font-weight: bolder;
+	margin: 10px 230px;
+	border-radius: 20px;
+}
