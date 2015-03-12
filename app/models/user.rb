@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, 
          :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook]
 
-  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "150x150>" }, :default_url => "/images/:style/missing.png"
+  has_attached_file :avatar, :styles => { :large => "512x512", :normal => "360x360", :medium => "300x300>", :thumb => "150x150>" }, :default_url => "/avatars/:style/missing.png"
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
 
@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
                             provider:oauth_raw_data.provider,
                             uid:oauth_raw_data.uid,
                             email:oauth_user_data.email,
-                            avatar: URI.parse(oauth_raw_data.info.image.gsub("http","https")),
+                            avatar: URI.parse(oauth_raw_data.info.image.gsub("square", "normal").gsub("http","https")),
                             password:Devise.friendly_token[0,20]
                           )
   end
