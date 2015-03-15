@@ -37,6 +37,9 @@ end
 
 namespace :deploy do
 
+  task :copy_configs, :roles => :app do
+  end
+
   task :migrate, :roles => :app do
     run "cd #{release_path} && bundle exec rake db:migrate RAILS_ENV=production"
   end
