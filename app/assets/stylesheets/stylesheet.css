@@ -1364,12 +1364,13 @@ h6 {
 	height: auto;
 	margin-top: 10px;
 	float: left;
+  font-size: 12px;
 }
 
 .footer-copy
 {
 	padding-left: 5px;
-	width: 710px;
+	width: 656px;
 	height: auto;
 	float: left;
 }
@@ -1383,9 +1384,9 @@ h6 {
 
 .footer-logo
 {
-	width: 273px;
+	/*width: 330px;*/
 	height: auto;
-	float: left;
+	float: right;
 	margin-right: 10px;
 }
 

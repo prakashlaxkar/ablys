@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, except: [:show, :index, :ablys_members]
+  before_action :authenticate_user!, except: [:show, :index, :ablys_members, :matrimony_list, :ncc_members]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
@@ -25,6 +25,14 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+  end
+
+  def matrimony_list
+    @search = User.where(is_matrimony: true).ransack(params[:q])
+    @users = @search.result(distinct: true)
+  end
+
+  def ncc_members
   end
 
   # POST /users

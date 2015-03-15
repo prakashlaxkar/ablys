@@ -11,6 +11,7 @@ Ablys::Application.routes.draw do
     collection do
       get 'ablys_members'
       get 'matrimony_list'
+      get 'ncc_members'
     end
   end
 

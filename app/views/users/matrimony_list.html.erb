@@ -1,0 +1,15 @@
+<div style="border:1px solid #d6d6d6;margin-top:10px;">
+  <div style="background-color:#BE0C0C; padding:9px 3px 0px 15px;" id="matrimony">
+    <%= search_form_for @search, url: "/users/matrimony_list" do |f| %>
+      <%= f.select :gender_eq, options_for_select([["Bride", "Female"],["Groom", "Male"]],  selected: @search.gender_eq), {include_blank: "Looking For"} %>
+      <%= f.select :gotra_cont, options_for_select($gotra, selected: @search.gotra_cont), {include_blank: "Select Gotra"} %>
+      <%= f.select :city_cont, options_for_select($city,  selected: @search.city_cont), {include_blank: "Select City"} %>
+      <%= f.select :state_cont, options_for_select($state, selected: @search.state_cont),{include_blank: "Select State"} %>
+      <%= button_tag 'Search', style: 'padding: 2px 7px;margin-top: -10px;' %>
+     <% end %>
+  </div>
+</div>
+<%= render 'index' %>
+<style type="text/css">
+	#matrimony select{ width: 150px;}
+</style>

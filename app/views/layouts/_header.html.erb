@@ -22,7 +22,11 @@
                 <li><a href="/about_bhajneri">About Bhajneri</a></li>
               </ul>
             </li>
-            <li><a href="/users">Members</a>
+            <li><a href="#">Members</a>
+             <ul>
+                <li><%= link_to 'All Members', users_path %></li>
+                <li><%= link_to 'NCC Members', ncc_members_users_path %></li>
+              </ul>
             </li>
             <li><a href="#">Gallery</a>
             </li>
