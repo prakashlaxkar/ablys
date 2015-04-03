@@ -1,0 +1,38 @@
+<!-- <h1>Listing events</h1> -->
+
+<table>
+<!--   <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Start date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead> -->
+
+  <tbody>
+  <div>
+    <% @events.each do |event| %>
+      <!-- <tr> -->
+        <div><%= link_to event.title, event %></div><br>
+        <div><%= event.description %></div>
+        <div><%= event.start_date %></div>
+        <% event.images.each do |image| %>
+          <%= image.title %>
+          <%= link_to image_tag(image.avatar.url(:thumb)), image%>
+        <% end %><br>
+        <%= link_to 'Add Photos', new_event_image_path(event) %>
+        <%= link_to 'Add Videos', new_event_video_path(event) %>
+        <!-- <td><%#= link_to 'Show', event %></td> -->
+        <!-- <td><%#= link_to 'Edit', edit_event_path(event) %></td>
+        <td><%#= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+      <!-- </tr> -->
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Add Event', new_event_path %>
