@@ -50,7 +50,7 @@
 
     <div style ="float:left;">
       <%= f.label :state %>
-      <%= f.select :state, options_for_select($state, @user.state), {:include_blank => 'Select State'}, class: 'validate[required]' %>
+      <%= f.select :state, options_for_select($state.sort, @user.state), {:include_blank => 'Select State'}, class: 'validate[required]' %>
     </div>
 
     <div style="clear:both;"></div>

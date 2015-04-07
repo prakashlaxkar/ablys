@@ -1,5 +1,10 @@
 $city = ["Ajmer", 'Bundi', "Kota", "Jaipur", "Jodhpur", "Tonk", "Udaipur", "Bhilwara", "Badmer", "Bikaner", "Gurgoan", "Rewadi"]
-$state = ["Rajasthan", "Maharastra", "Delhi", "Hariyana", "Uttar Predesh", "Madhya Predesh"]
+
+$state = ["Andra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", "Goa", "Gujarat", 
+	"Himachal Pradesh", "Rajasthan", "Maharastra","Delhi", "Jammu and Kashmir", "Hariyana", "Uttar Predash", 
+	"Madhya Pradesh","Manipur", "Meghalaya", "Mizoram", "Nagaland", "Uttarakhand", "West Bengal", "Odisha", "Punjab", "Karnataka", "Jharkhand", "Kerala", 
+	"Himachal Pradesh","Sikkim", "Tamil Nadu", "Telangana", "Tripura"]
+
 $gotra = ["Badela", "Badwar", "Bagadi", "Baksariya", "Bhagat", "Bhardwaj", "Bhati", "Bilha", "Chandel", "Chandrma", 
 	"Chodhariya", "Chouhan", "Devda", "Dhalyiya", "Gaharwal", "God", "Gudalya", "Handa", "Hanumanta", "Hatadiya", 
 	"Himmatpuri", "Jaisangpura", "Jaylok", "Jhilmiliya", "Jogela", "Kamdhaj", "Karediya", "Kashyap", "Mahatele",
