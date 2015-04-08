@@ -2,3 +2,5 @@ tmp
 public
 test
 log
+config/database.yml
+
