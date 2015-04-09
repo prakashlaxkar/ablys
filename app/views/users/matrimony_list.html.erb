@@ -3,7 +3,7 @@
     <%= search_form_for @search, url: "/users/matrimony_list" do |f| %>
       <%= f.select :gender_eq, options_for_select([["Bride", "Female"],["Groom", "Male"]],  selected: @search.gender_eq), {include_blank: "Looking For"} %>
       <%= f.select :gotra_cont, options_for_select($gotra, selected: @search.gotra_cont), {include_blank: "Select Gotra"} %>
-      <%= f.select :city_cont, options_for_select($city,  selected: @search.city_cont), {include_blank: "Select City"} %>
+      <%= f.select :city_cont, options_for_select(City.pluck('name'),  selected: @search.city_cont), {include_blank: "Select City"} %>
       <%= f.select :state_cont, options_for_select($state.sort, selected: @search.state_cont),{include_blank: "Select State"} %>
       <%= button_tag 'Search', style: 'padding: 2px 7px;margin-top: -10px;' %>
      <% end %>

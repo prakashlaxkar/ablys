@@ -2,7 +2,7 @@
   <div style="background-color:#BE0C0C; padding:9px 3px 0px 15px;">
     <%= search_form_for @q do |f| %>
       <%= f.text_field :name_cont, style: 'width:180px;margin-right:5px;',placeholder: "Enter Name" %>
-      <%= f.select :city_cont, options_for_select($city,  selected: @q.city_cont), {include_blank: "Select City"} %>
+      <%= f.select :city_cont, options_for_select(City.pluck('name'),  selected: @q.city_cont), {include_blank: "Select City"} %>
       <%# binding.pry %>
       <%= f.select :state_cont, options_for_select($state.sort, selected: @q.state_cont),{include_blank: "Select State"} %>
       <%= button_tag 'Search', style: 'padding: 2px 7px;margin-top: -10px;' %>

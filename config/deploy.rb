@@ -61,7 +61,7 @@ namespace :deploy do
 
   namespace :assets do
     task :precompile, :roles => :web, :except => { :no_release => true } do
-      logger.info "Skipping asset pre-compilation because there were no asset changes"
+      run "cd #{release_path} && bundle exec rake assets:precompile RAILS_ENV=production"
     end
   end
 end
