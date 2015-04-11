@@ -1,5 +1,3 @@
-$city = ["Ajmer", 'Bundi', "Kota", "Jaipur", "Jodhpur", "Tonk", "Udaipur", "Bhilwara", "Badmer", "Bikaner", "Gurgoan", "Rewadi"]
-
 $state = ["Andra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", "Goa", "Gujarat", 
 	"Himachal Pradesh", "Rajasthan", "Maharastra","Delhi", "Jammu and Kashmir", "Hariyana", "Uttar Predash", 
 	"Madhya Pradesh","Manipur", "Meghalaya", "Mizoram", "Nagaland", "Uttarakhand", "West Bengal", "Odisha", "Punjab", "Karnataka", "Jharkhand", "Kerala", 

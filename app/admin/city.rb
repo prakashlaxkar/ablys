@@ -1,18 +1,11 @@
 ActiveAdmin.register City do
+	permit_params :name, :State
 
-
-  # See permitted parameters documentation:
-  # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-  #
-  # permit_params :list, :of, :attributes, :on, :model
-  #
-  # or
-  #
-  # permit_params do
-  #   permitted = [:permitted, :attributes]
-  #   permitted << :other if resource.something?
-  #   permitted
-  # end
-
-
+	form do |f|
+		f.inputs "Add New City" do
+			f.input :state, as: :select, collection: $state.sort, include_blank: "Select State"
+			f.input :name
+		end
+		f.actions
+	end
 end
