@@ -8,4 +8,4 @@ $gotra = ["Badela", "Badwar", "Bagadi", "Baksariya", "Bhagat", "Bhardwaj", "Bhat
 	"Himmatpuri", "Jaisangpura", "Jaylok", "Jhilmiliya", "Jogela", "Kamdhaj", "Karediya", "Kashyap", "Mahatele",
 	"Mahobia", "Makwana", "Mandaretya", "Mandariya", "Mandhata", "Motiya", "Mudree", "Nagoriya", "Nainvaya", "Nalwariya",
 	"Narwaan", "Panihar", "Panwar", "Parihar", "Rathod", "Ratnela", "Sambhariya", "Sarangpura", "Shandilya", "Solanki", 
-	"Songra", "Tahariya", "Tentwal", "Tilgatiya", "Vadhys", "Vashist", "Vyas"]
+	"Songra", "Tahariya", "Tentwal", "Tilgatiya", "Vadhys", "Vashist", "Vyas", "Kachhawa"]

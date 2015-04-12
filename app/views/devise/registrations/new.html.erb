@@ -51,7 +51,7 @@
 
   <div class="left_box">
     <%= f.label :gotra %>
-    <%= f.select :gotra, options_for_select($gotra, f.object.gotra), {:include_blank => 'Select Gotra'}, class: 'validate[required]' %>
+    <%= f.select :gotra, options_for_select($gotra.sort, f.object.gotra), {:include_blank => 'Select Gotra'}, class: 'validate[required]' %>
   </div>
   <div style ="float:left;">
     <%= f.label :address %>
@@ -62,7 +62,7 @@
 
   <div class="left_box">
     <%= f.label :state %>
-    <%= f.select :state, options_for_select($state.sort, f.object.state), {:include_blank => 'Select State'}, class: 'validate[required]' %>
+    <%= f.select :state, options_for_select($state.sort, f.object.state), {:include_blank => 'Select State'}, class: 'validate[required] state_class' %>
   </div>
 
   <div style ="float:left;">
@@ -148,6 +148,20 @@
 <script type="text/javascript">
   $(document).ready(function(){
     $(".devise_form").validationEngine({promptPosition : "bottomLeft"});
-   });
+    $(".state_class").change(function(){
+      var val = $(this).val();
+      $.ajax({
+        type: "GET",
+        url:"/users/get_cities",
+        data: {state: val}
+        // success: function(data){
+        //   console.log(data);
+        // },
+        // error: function(data){
+        //   alert("something went wrong");
+        // }
+      });
+    });
+  });
 </script>
 
