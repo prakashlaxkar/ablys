@@ -3,7 +3,7 @@ $state = ["Andra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh"
 	"Madhya Pradesh","Manipur", "Meghalaya", "Mizoram", "Nagaland", "Uttarakhand", "West Bengal", "Odisha", "Punjab", "Karnataka", "Jharkhand", "Kerala", 
 	"Sikkim", "Tamil Nadu", "Telangana", "Tripura"]
 
-$gotra = ["Badela", "Badwar", "Bagadi", "Baksariya", "Bhagat", "Bhardwaj", "Bhati", "Bilha", "Chandel", "Chandrma", 
+$gotra = ["Pawar", "Badela", "Badwar", "Bagadi", "Baksariya", "Bhagat", "Bhardwaj", "Bhati", "Bilha", "Chandel", "Chandrma", 
 	"Chodhariya", "Chouhan", "Devda", "Dhalyiya", "Gaharwal", "God", "Gudalya", "Handa", "Hanumanta", "Hatadiya", 
 	"Himmatpuri", "Jaisangpura", "Jaylok", "Jhilmiliya", "Jogela", "Kamdhaj", "Karediya", "Kashyap", "Mahatele",
 	"Mahobia", "Makwana", "Mandaretya", "Mandariya", "Mandhata", "Motiya", "Mudree", "Nagoriya", "Nainvaya", "Nalwariya",
