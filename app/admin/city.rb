@@ -1,5 +1,5 @@
 ActiveAdmin.register City do
-	permit_params :name, :State
+	permit_params :name, :state
 
 	form do |f|
 		f.inputs "Add New City" do
