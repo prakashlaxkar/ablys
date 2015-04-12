@@ -13,3 +13,14 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$(document).ready(function(){
+	$(".state_class").change(function(){
+      var val = $(this).val();
+      $.ajax({
+        type: "GET",
+        url:"/users/get_cities",
+        data: {state: val}
+      });
+    });
+});

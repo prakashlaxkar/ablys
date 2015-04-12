@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, except: [:show, :index, :ablys_members, :matrimony_list, :ncc_members]
+  before_action :authenticate_user!, except: [:show, :index, :ablys_members, :matrimony_list, :ncc_members, :get_cities]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
@@ -33,6 +33,10 @@ class UsersController < ApplicationController
   end
 
   def ncc_members
+  end
+
+  def get_cities
+    @cities = City.where(state: params[:state]).pluck(:name)
   end
 
   # POST /users

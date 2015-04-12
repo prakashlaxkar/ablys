@@ -67,7 +67,7 @@
 
   <div style ="float:left;">
     <%= f.label :District %>
-    <%= f.select :city, options_for_select(City.pluck('name'), f.object.city), {:include_blank => 'Select City'}, class: 'validate[required]' %>
+    <%= f.select :city, options_for_select(City.pluck('name').sort, f.object.city), {:include_blank => 'Select City'}, class: 'validate[required] user_city' %>
   </div>
 
   <div style="clear:both;"></div>
@@ -148,20 +148,6 @@
 <script type="text/javascript">
   $(document).ready(function(){
     $(".devise_form").validationEngine({promptPosition : "bottomLeft"});
-    $(".state_class").change(function(){
-      var val = $(this).val();
-      $.ajax({
-        type: "GET",
-        url:"/users/get_cities",
-        data: {state: val}
-        // success: function(data){
-        //   console.log(data);
-        // },
-        // error: function(data){
-        //   alert("something went wrong");
-        // }
-      });
-    });
   });
 </script>
 
