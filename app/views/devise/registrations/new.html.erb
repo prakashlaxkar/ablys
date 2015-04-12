@@ -117,7 +117,7 @@
 
   <div style="clear:both;height:10px;"></div>
   <div style ="float:left;margin-bottom:50px;margin-left: 175px;">
-    <%= f.button "Update Profile" %>
+    <%= f.button "Create Profile" %>
     <%= link_to button_tag('cancel', type: "button"), root_path, style: "margin-left:15px;" %>
   </div>
 <% end %>
@@ -148,6 +148,10 @@
 <script type="text/javascript">
   $(document).ready(function(){
     $(".devise_form").validationEngine({promptPosition : "bottomLeft"});
+
+    $("#user_state").change(function(){
+      alert("fds");
+    })
    });
 </script>
 
