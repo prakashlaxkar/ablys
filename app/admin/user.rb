@@ -49,13 +49,13 @@ ActiveAdmin.register User do
       f.input :f_name, label: "Father Name"
       f.input :gender
       f.input :avatar
-      f.input :gotra
+      f.input :gotra, as: :select, collection: $gotra.sort, include_blank: "Select Gotra"
       f.input :address
-      f.input :city
-      f.input :state
+      f.input :state, as: :select, collection: $state.sort, include_blank: "Select State", input_html: {class: "state_class"}
+      f.input :city, as: :select, collection: City.pluck(:name).sort, include_blank: "Select City", input_html: {class: "user_city"}
       f.input :phone
       f.input :pin_code
-      f.input :marital_status
+      f.input :marital_status, as: :select, collection: ["Single", "Married", "Divorced", "Widow"]
       f.input :is_matrimony
       f.input :qualification
       f.input :designation
