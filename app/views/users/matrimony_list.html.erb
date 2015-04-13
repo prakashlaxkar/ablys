@@ -9,10 +9,14 @@
      <% end %>
   </div>
 </div>
-<%= render 'index' %>
-<div style="text-align: right; padding-bottom: 8px; font-size: 14px;">
-  <%= paginate @users %>
-</div>
+<% if @users.present? %>
+  <%= render 'index' %>
+  <div style="text-align: right; padding-bottom: 8px; font-size: 14px;">
+    <%= paginate @users %>
+  </div>
+<% else %>
+  <div style="color: black;font-size: 18px;text-align:center;padding: 10px;"> Sorry, No data available</div>
+<% end %>
 <style type="text/css">
 	#matrimony select{ width: 150px;}
 </style>
