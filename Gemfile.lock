@@ -240,6 +240,7 @@ DEPENDENCIES
   devise
   jbuilder (~> 1.2)
   jquery-rails
+  kaminari
   mysql2
   non-stupid-digest-assets
   omniauth

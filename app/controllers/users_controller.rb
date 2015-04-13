@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @q = User.ransack(params[:q])
-    @users = @q.result(distinct: true)
+    @users = @q.result(distinct: true).page params[:page]
   end
 
   # GET /users/1
@@ -29,7 +29,7 @@ class UsersController < ApplicationController
 
   def matrimony_list
     @search = User.where(is_matrimony: true).ransack(params[:q])
-    @users = @search.result(distinct: true)
+    @users = @search.result(distinct: true).page params[:page]
   end
 
   def ncc_members
