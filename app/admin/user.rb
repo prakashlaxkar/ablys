@@ -49,7 +49,7 @@ ActiveAdmin.register User do
       f.input :f_name, label: "Father Name"
       f.input :gender
       f.input :avatar
-      f.input :gotra, as: :select, collection: $gotra.sort, include_blank: "Select Gotra"
+      f.input :gotra, as: :select, collection: Gotra.pluck(:name).sort, include_blank: "Select Gotra"
       f.input :address
       f.input :state, as: :select, collection: $state.sort, include_blank: "Select State", input_html: {class: "state_class"}
       f.input :city, as: :select, collection: City.pluck(:name).sort, include_blank: "Select City", input_html: {class: "user_city"}

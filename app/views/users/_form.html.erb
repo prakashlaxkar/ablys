@@ -34,7 +34,7 @@
 
   <div class="left_box">
     <%= f.label :gotra %>
-    <%= f.select :gotra, options_for_select($gotra.sort, f.object.gotra), {:include_blank => 'Select Gotra'}, class: 'validate[required]' %>
+    <%= f.select :gotra, options_for_select(Gotra.pluck(:name).sort, f.object.gotra), {:include_blank => 'Select Gotra'}, class: 'validate[required]' %>
   </div>
   <div style ="float:left;">
     <%= f.label :address %>
