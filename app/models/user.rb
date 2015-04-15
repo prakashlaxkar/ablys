@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   has_attached_file :avatar, :styles => { :large => "512x512", :normal => "360x360", :medium => "300x300>", :thumb => "150x150>" }, :default_url => "/avatars/:style/missing.png"
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
-  validates :name, :email, :dob, :f_name, :gender, :avatar, :gotra, :address, :city, :state, :phone, :pin_code, :marital_status, :qualification, :designation, :company_name, :income, :presence => true
+  validates :name, :email, :dob, :f_name, :gender, :avatar, :gotra, :address, :city, :state, :phone, :pin_code, :marital_status, :qualification, :presence => true
   before_save :add_country
   
   def self.find_for_oauth(oauth_raw_data, oauth_user_data, signed_in_resource=nil )
