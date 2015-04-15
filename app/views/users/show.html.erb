@@ -1,6 +1,7 @@
 <div style="width:750px; padding: 10px 5px; font-size:13px;">
     <div style="float:left; text-align:center; width:155px; padding:10px;">
       <%= image_tag(@user.avatar(:medium), :width=>"150", :height=>"150") %><br>
+      <%= link_to 'View Photo', @user.avatar.url, :target => 'blank' %>
     </div>
     <div style="float:left; padding: 10px;">
       <div>

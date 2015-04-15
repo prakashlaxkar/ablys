@@ -1,7 +1,7 @@
 <% @users.each do |user| %>
   <div style="border:1px solid #d6d6d6;width:750px; padding-left:5px; font-size:13px;border-top: none;">
     <div style="float:left; text-align:center; width:155px; padding:10px;">
-      <%= image_tag(user.avatar(:medium), :width=>"150", :height=>"150") %><br>
+      <%= link_to image_tag(user.avatar(:medium), :width=>"150", :height=>"150"), user_path(user) %><br>
     </div>
     <div style="float:left; padding: 10px;width:555px;">
       <div>
