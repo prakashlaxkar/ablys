@@ -1,23 +1,28 @@
-<div class="page-header">
-  <h1> ABLYS Members </h1>
+<div style="width:100%; padding: 10px 5px; font-size:13px;">
+  <table width="99%;">
+    <thead>
+      <th width="7%">No.</th>
+      <th width="33%">Name</th>
+      <th width="20%">City</th>
+      <th width="20%">State</th>
+      <th width="20%">Mobile Number</th>
+    </thead>
+    <tbody>
+      <% @users.each_with_index do |user, index| %>
+        <tr>
+          <td><%= index + 1 %></td>
+          <td><%= link_to "Mr. #{user.name}", user_path(user.id) %></td>
+          <td><%= user.city %></td>
+          <td><%= user.state %></td>
+          <td><%= user.phone %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
-<table class="table table-bordered table-hover">
-  <thead>
-    <tr width="100%" align="left">
-      <th width="25%">Name </th>
-      <th width="25%">Father Name </th>
-      <th width="25%">Contact Number</th>
-      <th width="25%">City</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= link_to user.name, user_path(user) %></td>
-        <td><%= user.f_name %></td>
-        <td><%= user.phone %></td>
-        <td><%= user.city %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<style type="text/css">
+  table, th, td {border: 1px solid gray;}
+  thead {background-color: #BE0C0C;color: white;}
+  td, th {font-size: 14px;text-transform: capitalize; vertical-align: top;padding: 5px;}
+  tr {border: 1px solid gray;}
+</style>

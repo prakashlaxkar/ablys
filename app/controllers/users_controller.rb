@@ -20,7 +20,7 @@ class UsersController < ApplicationController
   end
 
   def ablys_members
-    @users = User.all
+    @users = User.where(is_ncc_member: true)
   end
 
   # GET /users/1/edit

@@ -1,5 +1,5 @@
 ActiveAdmin.register User do
-  permit_params :name, :dob, :f_name, :gender, :email, :address, :city, :state, :country, :pin_code, 
+  permit_params :name, :dob, :f_name, :gender, :email, :address, :city, :state, :country, :pin_code, :is_ncc_member,
   :phone, :is_matrimony, :avatar, :gotra, :marital_status, :qualification, :designation, :company_name, :income
 
   index do
@@ -33,6 +33,7 @@ ActiveAdmin.register User do
   filter :name
   filter :f_name
   filter :gender
+  filter :is_ncc_member
   filter :marital_status
   filter :city
   filter :state
@@ -57,6 +58,7 @@ ActiveAdmin.register User do
       f.input :pin_code
       f.input :marital_status, as: :select, collection: ["Single", "Married", "Divorced", "Widow"]
       f.input :is_matrimony
+      f.input :is_ncc_member
       f.input :qualification
       f.input :designation
       f.input :company_name
@@ -85,6 +87,7 @@ ActiveAdmin.register User do
         row :phone
         row :pin_code
         row :marital_status
+        row :is_ncc_member
         row :is_matrimony
         row :qualification
         row :designation
