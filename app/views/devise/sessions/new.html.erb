@@ -1,12 +1,12 @@
 <div class="modal-body">
-<%= form_for(resource, as: resource_name, url: session_path(resource_name), :remote => 'true') do |f| %>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), :remote => true) do |f| %>
     <div class="row">
       <div class='col-md-11 error'></div>
     </div>
     <div class="row">
       <div class="col-md-11">
-        <%= f.label :email %>
-        <%= f.email_field :email, autofocus: true, :class => 'form-control' %>
+        <%= f.label :username %>
+        <%= f.text_field :login, autofocus: true, :class => 'form-control' %>
       </div>
     </div>
     <div class="row">

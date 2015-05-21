@@ -185,6 +185,8 @@ Devise.setup do |config|
   # Don't put a too small interval or your users won't have the time to
   # change their passwords.
   config.reset_password_within = 6.hours
+  config.scoped_views = true
+  config.authentication_keys = [ :login ]
 
   # ==> Configuration for :encryptable
   # Allow you to use another encryption algorithm besides bcrypt (default). You can use

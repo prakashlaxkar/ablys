@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, 
-         :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook]
+         :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook], :authentication_keys => [:login]
 
   default_scope order(created_at: :desc)
   
@@ -10,9 +10,17 @@ class User < ActiveRecord::Base
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
   validates :name, :email, :dob, :f_name, :gender, :avatar, :gotra, :address, :city, :state, :phone, :pin_code, :marital_status, :qualification, :presence => true
+  validates :username,
+    :presence => true,
+    :uniqueness => {
+      :case_sensitive => false
+    }
+    
   before_save :add_country
-  
+  attr_accessor :login
+
   def self.find_for_oauth(oauth_raw_data, oauth_user_data, signed_in_resource=nil )
+    binding.pry
     return User.where("(provider = '#{oauth_raw_data.provider}' AND uid = '#{oauth_raw_data.uid}') OR email='#{oauth_user_data.email}'").first || User.create!(name:oauth_user_data.name,
                             provider:oauth_raw_data.provider,
                             uid:oauth_raw_data.uid,
@@ -24,6 +32,15 @@ class User < ActiveRecord::Base
 
   def add_country
     self.country = "India"
+  end
+
+  def self.find_for_database_authentication(warden_conditions)
+    conditions = warden_conditions.dup
+    if login = conditions.delete(:login)
+      where(conditions.to_h).where(["lower(username) = :value OR lower(email) = :value", { :value => login.downcase }]).first
+    else
+      where(conditions.to_h).first
+    end
   end
 
 end

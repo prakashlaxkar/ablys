@@ -1,14 +1,14 @@
 class Users::SessionsController < Devise::SessionsController
 
   def create
-    unless params[:user][:email].blank?
-      user = User.find_by_email(params[:user][:email])
+    unless params[:user][:login].blank?
+      user = User.where("email = ? OR username = ?", params[:user][:login], params[:user][:login]).first
       if user
         resource = warden.authenticate(:scope => resource_name, :recall => 'sessions#failure')
         if resource
           sign_in_and_redirect(resource_name, resource)
         else
-          @error_message = "Invalid email and password"
+          @error_message = "Invalid username and password"
           render :action => :failure
         end
       else
@@ -16,7 +16,7 @@ class Users::SessionsController < Devise::SessionsController
         render :action => :failure
       end
     else
-      @error_message = "Please enter your email id and password."
+      @error_message = "Please enter your username id and password."
       render :action => :failure
     end
   end
