@@ -5,7 +5,7 @@
     </div>
     <div class="row">
       <div class="col-md-11">
-        <%= f.label :username %>
+        <%= f.label :username_or_email %>
         <%= f.text_field :login, autofocus: true, :class => 'form-control' %>
       </div>
     </div>
@@ -31,13 +31,13 @@
     <div style="min-height: 5px;"></div>
 <% end %>
 </div>
-<div class="modal-footer">
-    <%- if devise_mapping.omniauthable? %>
-      <%- resource_class.omniauth_providers.each do |provider| %>
-        <%= link_to image_tag("facebook-login-button.gif"), omniauth_authorize_path(resource_name, provider) %>
-      <% end -%>
-    <% end -%>
-  </div>
+<!-- div class="modal-footer">
+    <%#- if devise_mapping.omniauthable? %>
+      <%#- resource_class.omniauth_providers.each do |provider| %>
+        <%#= link_to image_tag("facebook-login-button.gif"), omniauth_authorize_path(resource_name, provider) %>
+      <%# end -%>
+    <%# end -%>
+  </div> -->
 
 
 <style type="text/css">

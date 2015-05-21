@@ -1,4 +1,8 @@
 <%= form_for @user, :html => { :class => 'user_form' } do |f| %>  
+  <div style="color:red;">
+    <%= devise_error_messages! %>
+  </div>
+
   <div class="left_box">
     <%= f.label :name %>
     <%= f.text_field :name, class: 'validate[required]' %>
@@ -11,12 +15,11 @@
   <div style="clear:both;"></div>
   <div class="left_box">
     <%= f.label :email %>
-    <%= f.text_field :email, class: 'validate[required, custom[email]]' %>
+    <%= f.text_field :email, class: 'validate[custom[email]]' %>
   </div>
-
   <div style ="float:left;">
-    <%= f.label :gender %>
-    <%= radio_button("user", "gender", "Male") %><span> Male </span><%= radio_button("user", "gender", "Female") %><span> Female</span>
+    <label> Username</label>
+    <%= f.text_field :username, class: 'validate[required]' %>
   </div>
 
   <div style="clear:both;"></div>
@@ -26,8 +29,8 @@
     <%= f.date_field :dob, class: 'validate[required]' %>
   </div>
   <div style ="float:left;">
-    <%= f.label :marital_status  %>
-    <%= f.select :marital_status, options_for_select(["Single", "Married", "Divorced", "Widow"], f.object.marital_status), {:include_blank => 'Please Select'}, class: 'validate[required]' %>
+    <%= f.label :gender %>
+    <%= radio_button("user", "gender", "Male") %><span> Male </span><%= radio_button("user", "gender", "Female") %><span> Female</span>
   </div>
 
   <div style="clear:both;"></div>
@@ -35,6 +38,16 @@
   <div class="left_box">
     <%= f.label :gotra %>
     <%= f.select :gotra, options_for_select(Gotra.pluck(:name).sort, f.object.gotra), {:include_blank => 'Select Gotra'}, class: 'validate[required]' %>
+  </div>
+  <div style ="float:left;">
+    <%= f.label :marital_status  %>
+    <%= f.select :marital_status, options_for_select(["Single", "Married", "Divorced", "Widow"], f.object.marital_status), {:include_blank => 'Please Select'}, class: 'validate[required]' %>
+  </div>
+
+  <div style="clear:both;"></div>
+  <div class="left_box">
+    <%= f.label :phone %>
+    <%= f.text_field :phone, class: 'validate[required, custom[phone]]' %>
   </div>
   <div style ="float:left;">
     <%= f.label :address %>
@@ -49,30 +62,18 @@
   </div>
 
   <div style ="float:left;">
-    <%= f.label :city %>
-    <%= f.select :city, options_for_select(City.pluck('name').sort, f.object.city), {:include_blank => 'Select City'}, class: 'validate[required] user_city' %>
+    <%= f.label :District %>
+    <%= f.select :city, options_for_select(City.pluck('name').sort, f.object.city), {:include_blank => 'Select District'}, class: 'validate[required] user_city' %>
   </div>
 
   <div style="clear:both;"></div>
-  <div class="left_box">
-    <%= f.label :phone %>
-    <%= f.text_field :phone, class: 'validate[required, custom[phone]]' %>
-  </div>
-
-  <div class="left_box">
-    <%= f.label :pin_code %>
-    <%= f.text_field :pin_code %>
-  </div> 
-
-  <div style="clear:both;"></div>
-
   <div class="left_box">
     <%= f.label :qualification %>
     <%= f.text_field :qualification, class: 'validate[required]' %>
   </div>
-  <div style ="float:left;">
-    <%= f.label :designation %>
-    <%= f.text_field :designation %>
+  <div style="float:left;">
+    <%= f.label :pin_code %>
+    <%= f.text_field :pin_code, class: 'validate[required]' %>
   </div>
 
   <div style="clear:both;"></div>
@@ -81,22 +82,20 @@
     <%= f.label :company_name %>
     <%= f.text_field :company_name %>
   </div>
-  <!-- <div style ="float:left;">
-    <%#= f.label :annual_income %>
-    <%#= f.text_field :income %>
-  </div> -->
+  <div style ="float:left;">
+    <%= f.label :designation %>
+    <%= f.text_field :designation %>
+  </div>
 
   <div style="clear:both;"></div>
   <div class="left_box" style="width: 232px;">
-    <%= f.label :upload_photo%>
+    <%= f.label :upload_your_photo%>
   </div>
-  <div style="float:left"> <%= f.file_field :avatar %></div>
-
-  <div style="clear:both;"></div>
+  <div style="float:left"> <%= f.file_field :avatar, style: 'margin-right: -10px;' %></div>
 
   <div style="clear:both;"></div>
   <div class="left_box" style="width: 500px;padding: 10px 0px;">
-    <span style="margin-right:55px;"> Do you want to registor for matrimony </span>
+    <span> Do you want to registor for matrimony </span>
     <%= radio_button("user", "is_matrimony", true) %><span> Yes </span><%= radio_button("user", "is_matrimony", false) %><span> No</span>
   </div>
    

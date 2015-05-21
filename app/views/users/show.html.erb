@@ -10,6 +10,7 @@
       </div>
       <table>
         <tr><td>Email </td><td>:</td><td style="text-transform: none;"><%= @user.email %> </td></tr>
+        <tr><td>Username </td><td>:</td><td><%= @user.username %></td></tr>
         <tr>
           <% if @user.gender == 'Female' && @user.marital_status == 'Married' %>
             <td> Husband Name</td>
@@ -25,7 +26,6 @@
         <tr><td>Marital status </td><td>:</td><td><%= @user.marital_status %></td></tr>
         <tr><td>Qualification </td><td>:</td><td><%= @user.qualification %></td></tr>
         <tr><td>Designation</td><td>:</td><td><%= @user.designation %></td></tr>
-        <!-- <tr><td>Annual Income </td><td>:</td><td><%#= @user.income %></td></tr> -->
         <tr><td>Address </td><td>:</td><td><%= @user.address%></td></tr>
         <tr><td>City </td><td>:</td><td><%= @user.city %></td></tr>
         <tr><td>State </td><td>:</td><td><%= @user.state %></td></tr>
