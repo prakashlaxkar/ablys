@@ -32,7 +32,7 @@ class User < ActiveRecord::Base
   end
 
   def create_email
-    self.email = "#{self.username.split(" ").first}#{rand(1..99)}@ablys.com"
+    self.email = "#{self.username.split(" ").first}#{rand(1..99)}@ablys.com" if self.email.blank?
   end
 
   def add_country

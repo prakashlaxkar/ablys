@@ -16,7 +16,7 @@ class Users::SessionsController < Devise::SessionsController
         render :action => :failure
       end
     else
-      @error_message = "Please enter your username id and password."
+      @error_message = "Please enter your username and password."
       render :action => :failure
     end
   end
