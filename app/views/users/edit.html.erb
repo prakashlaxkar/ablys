@@ -2,5 +2,28 @@
 	<div id="Labelrent">
 	  <strong>Edit your Profile</strong>
 	</div>
-	<%= render :partial => 'form' %>
+	<% if params["password"] == "true" %>
+		<%= form_for @user, :html => { :class => 'user_form' } do |f| %>  
+		  <div style="color:red;">
+		    <%= devise_error_messages! %>
+		  </div>
+
+		  <div class="left_box">
+		    <label> New Password</label>
+		    <%= f.password_field :password, class: 'validate[required]' %>
+		  </div>
+		  <div style ="float:left;">
+		    <label> Confirm New Password</label>
+		    <%= password_field :password_confirmation, class: 'validate[required]' %>
+		  </div>
+
+		  <div style="clear:both"></div>
+		  <div style ="float:left;margin-bottom:50px;">
+			<%= f.button "Update Password" %>
+			<%= link_to button_tag('cancel', type: "button"), user_path(@user) %>
+		  </div>
+		<% end %>
+	<% else %>
+		<%= render :partial => 'form' %>
+	<% end %>
 </div>
