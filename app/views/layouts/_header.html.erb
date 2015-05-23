@@ -19,7 +19,7 @@
             <li><a href="#">About Samaj</a>
               <ul>
                 <li><a href="/about_samaj">About Samaj</a></li>
-                <li><a href="/about_bhajneri">About Bhajneri</a></li>
+                <li><a href="/about_bhajneri">About Chaina Kusla Mata</a></li>
               </ul>
             </li>
             <li><a href="#">Members</a>
@@ -32,11 +32,17 @@
             </li>
             <li><a href="/users/matrimony_list">Matrimony</a>
             </li>
+            <!-- <li><a href="#">News & Event</a>
+            </li> -->
+            <li><a href="/about_us">About us</a>
+            </li>
             <li style="float:right;text-align:center;">
               <% if user_signed_in? %>
                 <%= link_to "#{current_user.name}", '#' %>
                  <ul>
                     <li><%= link_to 'My Profile', user_path(current_user) %></li>
+                    <li><%= link_to 'Edit Profile', edit_user_path(current_user) %></li>
+                    <li><%= link_to 'Change password', edit_user_path(current_user, "password" => "true") %></li>
                     <li><%= link_to 'Log Out', destroy_user_session_path, :method => :delete %></li>
                   </ul>
               <% else %>

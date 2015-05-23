@@ -5,6 +5,12 @@ class HomeController < ApplicationController
 	def contact_us
 	end
 
+
+	def about_us
+		emails = ["arvind171@ymail.com", "bharatlaksh123@gmail.com", "laxkardk@gmail.com", "prakashlaxkar@gmail.com"]
+		@users = User.where(:email => emails)
+	end
+
 	def about_samaj
 	end
 	

@@ -13,3 +13,62 @@
 	margin: 10px 230px;
 	border-radius: 20px;
 }
+
+/*contact us css*/
+
+.box1 {
+	color: #ffd2d2;
+	padding: 15px 0px 0px 12px;
+	border-radius:10px;
+	min-height: 205px;
+}
+.box1 h3 {
+	font-size:16px;
+	color:#fff;
+	margin-top: 0px;
+	
+}
+.info {
+	float:left;padding-left:8px; width: 190px;
+}
+.info h4 {
+	line-height: 18px;
+	font-size: 13px;
+	/*margin-bottom: -5px;*/
+	
+}
+
+.box1 p {
+	text-align: center;
+	font-size: 20px;
+	font-weight: bold;
+	color: siler;
+	margin: 0px 0px 12px;
+}
+
+
+.headingbox
+{
+	color:#4800ff;
+	 background-color:#dec70d;
+	  font-size: 24px; 
+	  padding: 10px 10px 10px 15px;
+	  width:340px;
+	  border-radius:10px;
+	  margin-bottom:15px;
+	  margin-left:250px;
+}
+/*.box1 p {
+	margin-left:30px;
+}*/
+.profile-box {
+	background: no-repeat 100% 100% #b40303;
+	width:374px;
+	float: left;
+	margin-bottom: 15px;
+	border-radius: 8px;
+}
+
+.right-space{
+	margin-right: 10px;
+}
