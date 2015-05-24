@@ -1,3 +1,4 @@
+
 class UsersController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index, :ablys_members, :matrimony_list, :ncc_members, :get_cities]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
@@ -20,7 +21,7 @@ class UsersController < ApplicationController
   end
 
   def ablys_members
-    @users = User.where(is_ncc_member: true)
+    @users = User.where(is_ncc_member: true).reorder("is_active desc")
   end
 
   # GET /users/1/edit

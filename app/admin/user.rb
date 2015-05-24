@@ -1,29 +1,22 @@
 ActiveAdmin.register User do
   permit_params :name, :dob, :f_name, :gender, :email, :address, :city, :state, :country, :pin_code, :is_ncc_member,
-  :phone, :is_matrimony, :avatar, :gotra, :marital_status, :qualification, :designation, :company_name, :income
+  :phone, :is_matrimony, :avatar, :gotra, :marital_status, :qualification, :designation, :company_name, :income,
+  :membership, :is_active, :username
 
   index do
     selectable_column
     column :name
     column :email
-    column "Date of Birth" do |b|
-      b.dob.try(:strftime, "%d %B %Y")
-    end
     column "Father Name" do |b|
       b.f_name
     end
-    column :gender
     column :gotra
-    column :address
+    column :membership
     column :city
     column :state
     column :phone
-    column :pin_code
     column :marital_status
     column :qualification
-    column :designation
-    column :company_name
-    column :income
     column :sign_in_count
     column :created_at
     actions
@@ -45,6 +38,7 @@ ActiveAdmin.register User do
   form do |f|
     f.inputs "User Details" do
       f.input :name
+      f.input :username
       f.input :email
       f.input :dob, label: "Date Of Birth"
       f.input :f_name, label: "Father Name"
@@ -59,6 +53,8 @@ ActiveAdmin.register User do
       f.input :marital_status, as: :select, collection: ["Single", "Married", "Divorced", "Widow"]
       f.input :is_matrimony
       f.input :is_ncc_member
+      f.input :is_active
+      f.input :membership, as: :select, collection: ["Lifetime", "Yearly"], include_blank: "Select Membership"
       f.input :qualification
       f.input :designation
       f.input :company_name

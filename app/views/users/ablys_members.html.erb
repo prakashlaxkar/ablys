@@ -1,17 +1,19 @@
 <div style="width:100%; padding: 10px 5px; font-size:13px;">
   <table width="99%;">
     <thead>
-      <th width="7%">No.</th>
-      <th width="33%">Name</th>
-      <th width="20%">City</th>
-      <th width="20%">State</th>
-      <th width="20%">Mobile Number</th>
+      <th width="5%">No.</th>
+      <th width="30%">Name</th>
+      <th width="15%">Membership</th>
+      <th width="15%">City</th>
+      <th width="18%">State</th>
+      <th width="17%">Mobile Number</th>
     </thead>
     <tbody>
       <% @users.each_with_index do |user, index| %>
         <tr>
           <td><%= index + 1 %></td>
           <td><%= link_to "Mr. #{user.name}", user_path(user.id) %></td>
+          <td><%= user.membership %></td>
           <td><%= user.city %></td>
           <td><%= user.state %></td>
           <td><%= user.phone %></td>
