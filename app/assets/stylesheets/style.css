@@ -58,9 +58,7 @@
 	  margin-bottom:15px;
 	  margin-left:250px;
 }
-/*.box1 p {
-	margin-left:30px;
-}*/
+
 .profile-box {
 	background: no-repeat 100% 100% #b40303;
 	width:374px;
@@ -72,3 +70,5 @@
 .right-space{
 	margin-right: 10px;
 }
+
+/* new-ticker */

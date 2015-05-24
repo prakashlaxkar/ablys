@@ -1,44 +1,44 @@
 <div class="news">
-	          <div class="boxfont1 boxheading boxborder ">
-	              <h1>Catergories</h1>
-	          </div>
-	          <div class="boxcotent">
-	              <ul>
-	                  <li><a href="/">About ABLYS</a></li>
-	                  <li><a href="/about_samaj">About SAMAJ</a></li>
-	                  <li><a href="/users/matrimony_list">Matrimonial</a></li>
-	                  <li><a href="#">News & Events</a></li>
-	              </ul>                            
-	          </div>
-	          <div class="boxheading topmargin boxborder boxfont1">
-	              <h1>Tell A Friend</h1>
-	          </div>
-	          <div class="boxcotent">
-	              <table class="tabmargin">
-	                  <tbody><tr>
-	                      <td>Friends E-Mail</td>
-	                      
-	                  </tr>
-	                  <tr>
-	                      <td>
-	                          <input id="Text3" type="text"></td>
-	                  </tr>
-	                  <tr>
-	                      <td>Your E-Mail</td>  
-	                  </tr>
-	                  <tr>
-	                      <td>
-	                          <input id="Text4" type="text"></td>
-	                  </tr>
-	                  <tr>
-	                      <td>
-	                          <input id="Button2" type="button" style="width:100%" value="Submit">
-	                      </td>
-	                  </tr>
-	              </tbody></table>
-	          </div>
-	          <div class="boxcotent topmargin" style="border-top: solid 2px #000000; background-color: #FFF;">
-	              <img src="/assets/Donate.jpg" width="196" height="180" alt="Donate">
-	              <img src="/assets/DonateButton.png" width="146" height="43" alt="donate" style="margin-top: -40px; margin-left: 25px;">
-	          </div>
-	      </div>
+	<div class="boxfont1 boxheading boxborder ">
+		<h1>Catergories</h1>
+	</div>
+	<div class="boxcotent">
+		<ul>
+			<li><a href="/">About ABLYS</a></li>
+			<li><a href="/about_samaj">About SAMAJ</a></li>
+			<li><a href="/users/matrimony_list">Matrimonial</a></li>
+			<li><a href="#">News & Events</a></li>
+		</ul>                            
+	</div>
+	<div class="boxcotent topmargin" style="border-top: solid 2px #000000; background-color: #FFF;">
+		<%= link_to image_tag("Donate.jpg", :width=>"197", :height =>"180"), donate_now_path %>
+		<%= link_to image_tag("DonateButton.png", :width=>"146", :height =>"43"), donate_now_path, style: "margin-top: -40px; margin-left: 25px;" %>
+	</div>
+	<div class="boxheading topmargin boxborder boxfont1">
+		<h1>Tell A Friend</h1>
+	</div>
+	<div class="boxcotent">
+		<table class="tabmargin">
+			<tbody><tr>
+				<td>Friends E-Mail</td>
+
+			</tr>
+			<tr>
+				<td>
+					<input id="Text3" type="text"></td>
+			</tr>
+			<tr>
+				<td>Your E-Mail</td>  
+			</tr>
+			<tr>
+				<td>
+					<input id="Text4" type="text"></td>
+			</tr>
+			<tr>
+				<td>
+					<input id="Button2" type="button" style="width:100%" value="Submit">
+				</td>
+			</tr>
+		</tbody></table>
+	</div>
+</div>

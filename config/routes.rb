@@ -29,6 +29,7 @@ Ablys::Application.routes.draw do
   get 'about_bhajneri' => "home#about_bhajneri"
   get 'contact_us' => "home#contact_us"
   get 'about_us' => "home#about_us"
+  get 'donate_now' => "home#donate_now"
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

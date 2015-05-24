@@ -11,7 +11,7 @@
                 <%= link_to image_tag(user.avatar(:thumb), :width=>"150", :height=>"150"), user_path(user) %>
               </div>
               <div class="info">
-                <h3><%= link_to user.name, user_path(user), :style => "color:white" %></h3>
+                <h3><%= link_to user.name.titleize, user_path(user), :style => "color:white" %></h3>
                 <h4>Address: <%= user.address %></h4>
                 <h4><%= "#{user.city}, #{user.state}" %></h4>
                 <h4>Mobile : <%= user.phone %></h4>
