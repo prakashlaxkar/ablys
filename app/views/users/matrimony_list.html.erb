@@ -11,8 +11,13 @@
 </div>
 <% if @users.present? %>
   <%= render 'index' %>
-  <div style="text-align: right; padding-bottom: 8px; font-size: 14px;">
-    <%= paginate @users %>
+  <div style="width: 100%">
+    <span style="text-align: left; padding-bottom: 8px; font-size: 14px;width: 20%;float:left">
+      Total <%= @total %> results
+    </span>
+    <span style="text-align: right; float:left;padding-bottom: 8px; font-size: 14px;width: 80%;">
+      <%= paginate @users %>
+    </span>
   </div>
 <% else %>
   <div style="color: black;font-size: 18px;text-align:center;padding: 10px;"> Sorry, No data available</div>

@@ -8,6 +8,7 @@ class UsersController < ApplicationController
   def index
     @q = User.ransack(params[:q])
     @users = @q.result(distinct: true).page params[:page]
+    @total = @users.total_count
   end
 
   # GET /users/1
@@ -22,6 +23,7 @@ class UsersController < ApplicationController
 
   def ablys_members
     @users = User.where(is_ncc_member: true).reorder("is_active desc")
+    @total = @users.total_count
   end
 
   # GET /users/1/edit
@@ -31,6 +33,7 @@ class UsersController < ApplicationController
   def matrimony_list
     @search = User.where(is_matrimony: true).ransack(params[:q])
     @users = @search.result(distinct: true).page params[:page]
+    @total = @users.total_count
   end
 
   def ncc_members
