@@ -18,7 +18,7 @@
 	      		<%= yield %>
 	      	</div>
 	      </div>
-	      <% if request.path == '/'  || request.path == "/users/sign_up" %>
+	      <% if request.path == '/'  || request.path == "/users/sign_up" || request.path == "/contact_us" %>
 	      	<%= render 'layouts/right_pannel' %>
 	      <% end %>
 		</div>
@@ -50,7 +50,7 @@
 	.boxcotent input{
 		width: 168px !important;
 	}
-	<% if request.path != '/' && request.path != "/users/sign_up" %>
+	<% if request.path != '/' && request.path != "/users/sign_up" && request.path != "/contact_us" %>
 		.midd{width: 778px;}
 	<% end %>
 </style>

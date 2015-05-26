@@ -30,6 +30,7 @@ Ablys::Application.routes.draw do
   get 'contact_us' => "home#contact_us"
   get 'about_us' => "home#about_us"
   get 'donate_now' => "home#donate_now"
+  post "create_message" => "home#create_message"
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
