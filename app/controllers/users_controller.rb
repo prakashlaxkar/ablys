@@ -22,7 +22,6 @@ class UsersController < ApplicationController
 
   def ablys_members
     @users = User.where(is_ncc_member: true).reorder("is_active desc")
-    @total = @users.total_count
   end
 
   # GET /users/1/edit
