@@ -29,7 +29,7 @@ class UsersController < ApplicationController
   end
 
   def matrimony_list
-    @search = User.where(is_matrimony: true).ransack(params[:q])
+    @search = User.where("is_matrimony = true AND marital_status != 'Married' ").ransack(params[:q])
     @users = @search.result(distinct: true).page params[:page]
     @total = @users.total_count
   end
