@@ -23,6 +23,10 @@ Ablys::Application.routes.draw do
     end
   end
 
+  resources :conversations do
+    resources :messages
+  end
+
   root 'home#index'
 
   get 'about_samaj' => "home#about_samaj"

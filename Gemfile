@@ -30,6 +30,8 @@ gem 'rails-i18n', '~> 4.0.0' # For 4.0.x
 gem 'ransack'
 gem 'activeadmin', github: 'activeadmin'
 gem 'kaminari'
+gem 'private_pub'
+gem 'thin'
 # gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

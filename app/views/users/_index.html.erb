@@ -6,6 +6,8 @@
     <div style="float:left; padding: 10px;width:555px;">
       <div>
         <%= link_to "<b>#{user.name.titleize}</b>".html_safe, user_path(user), :style => 'font-size: 15px;' %>
+        <%= link_to "Send Message", "javascript:void(0);", class: "btn btn-success btn-xs start-conversation",
+                    "data-sid" => current_user.id, "data-rip" => user.id, style: "float: right;" if current_user && user != current_user %>
       </div>
       <table>
         <tr><td>Email :</td><td style="text-transform: none;"><%= user.email %> </td></tr>

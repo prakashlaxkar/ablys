@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require private_pub
 //= require_tree .
 
 $(document).ready(function(){
@@ -23,4 +24,10 @@ $(document).ready(function(){
         data: {state: val}
       });
     });
+
+    $.ajaxSetup({
+	  headers: {
+	    'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+	  }
+	});
 });
