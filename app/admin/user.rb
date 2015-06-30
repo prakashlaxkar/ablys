@@ -1,7 +1,7 @@
 ActiveAdmin.register User do
   permit_params :name, :dob, :f_name, :gender, :email, :address, :city, :state, :country, :pin_code, :is_ncc_member,
   :phone, :is_matrimony, :avatar, :gotra, :marital_status, :qualification, :designation, :company_name, :income,
-  :membership, :is_active, :username
+  :membership, :is_active, :username, :password
 
   index do
     selectable_column
@@ -40,6 +40,7 @@ ActiveAdmin.register User do
       f.input :name
       f.input :username
       f.input :email
+      f.input :password
       f.input :dob, label: "Date Of Birth"
       f.input :f_name, label: "Father Name"
       f.input :gender
@@ -91,6 +92,15 @@ ActiveAdmin.register User do
         row :income
 
       end
+    end
+  end
+
+  controller do
+    def update
+      if params[:user][:password].blank?
+        params[:user].delete("password")
+      end
+      super
     end
   end
 end
