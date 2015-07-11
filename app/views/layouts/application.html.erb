@@ -11,14 +11,22 @@
   	<div id="page">
       <%= render 'layouts/header' %>
       <div id="content">
+      	<div class='menu'>
+	      	<div class="menu-inner" style="padding: 8px 1px;background-color:#BF0000;text-transform: none;font-size: 14px;margin-bottom: 0px;">
+	      		<marquee><span><%= Event.all.map{|x| x.title.capitalize}.join(' | ') %></span></marquee>
+	      	</div>
+      	</div>
       	<div class="inner-part">
 	      <%= render 'layouts/left_pannel' %>
 	      <div class="midd">
 	      	<div style="padding: 0 10px;">
+	      	<%- flash.each do |name, msg| -%>
+			    <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+			  <%- end -%>  
 	      		<%= yield %>
 	      	</div>
 	      </div>
-	      <% if request.path == '/'  || request.path == "/users/sign_up" || request.path == "/contact_us" %>
+	      <% if three_pannel %>
 	      	<%= render 'layouts/right_pannel' %>
 	      <% end %>
 		</div>
@@ -39,6 +47,10 @@
 
 			var main_menu = new main_menu.dd("main_menu");
 			main_menu.init("main_menu", "menuhover");
+
+			$("#flash_alert, #flash_notice").click(function() {
+				$(this).hide();
+			});
 		</script>
 </body>
 </html>
@@ -50,7 +62,9 @@
 	.boxcotent input{
 		width: 168px !important;
 	}
-	<% if request.path != '/' && request.path != "/users/sign_up" && request.path != "/contact_us" %>
+	<% unless three_pannel %>
 		.midd{width: 778px;}
 	<% end %>
+	#flash_alert, #error_explanation{font-size: 14px; color: red;margin: 10px 0 0 5px;  background-color: wheat;}
+	#flash_notice{font-size: 14px; color: green;margin: 10px 0 0 5px;  background-color: wheat;}
 </style>

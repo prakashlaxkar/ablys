@@ -1,5 +1,7 @@
 <div class="modal-body">
-<%= form_for(resource, as: resource_name, url: session_path(resource_name), :remote => true) do |f| %>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div id="flash_alert"><%= resource.errors.full_messages.join("\n")%></div>
+
     <div class="row">
       <div class='col-md-11 error'></div>
     </div>
@@ -26,24 +28,14 @@
     <div class="row">
       <div class="col-md-12">
         <%= f.submit 'Sign In', :class => 'btn btn-primary' %>
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <%= link_to 'Cancel', root_path, :class => 'btn btn-default' %>
       </div>
     </div>
     <div style="min-height: 5px;"></div>
 <% end %>
 </div>
-<!-- div class="modal-footer">
-    <%#- if devise_mapping.omniauthable? %>
-      <%#- resource_class.omniauth_providers.each do |provider| %>
-        <%#= link_to image_tag("facebook-login-button.gif"), omniauth_authorize_path(resource_name, provider) %>
-      <%# end -%>
-    <%# end -%>
-  </div> -->
-
 
 <style type="text/css">
   .row {margin-right: 0px;}
   .error {color: red;font-size: 14px;}
 </style>
-
-<%#= render "devise/shared/links" %>
