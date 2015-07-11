@@ -12,9 +12,9 @@
       <%= render 'layouts/header' %>
       <div id="content">
       	<div class='menu'>
-	      	<div class="menu-inner" style="padding: 8px 1px;background-color:#BF0000;text-transform: none;font-size: 14px;margin-bottom: 0px;">
-	      		<marquee><span><%= Event.all.map{|x| x.title.capitalize}.join(' | ') %></span></marquee>
-	      	</div>
+	      	<!-- <div class="menu-inner" style="padding: 8px 1px;background-color:#BF0000;text-transform: none;font-size: 14px;margin-bottom: 0px;">
+	      		<marquee><span><%#= Event.all.map{|x| x.title.capitalize}.join(' | ') %></span></marquee>
+	      	</div> -->
       	</div>
       	<div class="inner-part">
 	      <%= render 'layouts/left_pannel' %>
