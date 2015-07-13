@@ -1,10 +1,11 @@
 class EventsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   respond_to :html
 
   def index
-    @events = Event.all
+    @events = Event.where(is_verify: true).order("updated_at desc")
     # @image = Image.new
     respond_with(@events)
   end
@@ -15,12 +16,13 @@ class EventsController < ApplicationController
 
   def new
     @event = Event.new
-    p @event
+    @event.images.build
     respond_with(@event)
   end
 
   def edit
     @events = Event.all
+    @event.images.build if @event.images.blank?
     respond_with(@events)
   end
 
@@ -46,6 +48,6 @@ class EventsController < ApplicationController
     end
 
     def event_params
-      params.require(:event).permit(:title, :description, :start_date)
+      params.require(:event).permit(:title, :description, :start_date, images_attributes: [:id, :avatar, :image_holder_id, :image_holder_type, :title, :description, :_destroy])
     end
 end

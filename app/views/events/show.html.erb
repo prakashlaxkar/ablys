@@ -1,19 +1,34 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @event.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @event.description %>
-</p>
-
-<p>
-  <strong>Start date:</strong>
-  <%= @event.start_date %>
-</p>
-
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<% if @event.images.present? %>
+  <div style="margin-top: 8px;">
+    <div id="slidercontainer" class="twelve columns">
+      <section id="slider">
+        <div class="line-op"></div>
+        <div id="layerslider" class="slideritems ls-container ls-smartgroup" style="position: relative;">
+          <div class="ls-inner" style="width: 550px; height: 411px !important; background-color: transparent;">
+            <% @event.images.each_with_index do |image, index| %>
+              <div class="ls-layer <%= (index == 0) ? 'ls-active' : ''%>" id="ls-layer-<%= (index +1) %>" data-rel="slidedelay: 3000;" style="visibility: visible; width: 0px; height: 411px !important; display: none; left: 0px; right: auto; top: 0px; bottom: auto;">
+               <%= image_tag(image.avatar, width: "550", height: "411") %></div>
+            <% end %>
+          </div>
+        <a class="ls-nav-prev" href="#"></a><a class="ls-nav-next" href="#"></a><div class="ls-bottom-nav-wrapper"><a class="ls-nav-start" href="#"></a><span class="ls-bottom-slidebuttons"><a href="#" class=""></a><a href="#" class=""></a><a href="#" class="ls-nav-active"></a><a href="#" class=""></a><a href="#" class=""></a><a href="#" class=""></a><a href="#" class=""></a><a href="#" class=""></a></span><a class="ls-nav-stop" href="#"></a></div></div>
+      </section>
+    </div>
+  </div>
+<% end %>
+<table>
+  <tr>
+    <td>
+      <header>
+          <h3 style="margin:0px;"><%= @event.title %></h3>
+          <span class="entry-date"><%= @event.start_date %></span>
+      </header>
+      <p style="font-size:14px;text-align: justify;"><%= @event.description %></p>
+    </td>
+  </tr>
+  <tr>
+      <td>
+          <%= link_to '<< Other News', events_path, style: "float:right;" %>
+      </td>
+  </tr>
+</table>
