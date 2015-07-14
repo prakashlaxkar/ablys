@@ -44,6 +44,10 @@ namespace :deploy do
     run "cd #{release_path} && bundle exec rake db:migrate RAILS_ENV=production"
   end
 
+  task :set_permission do
+    run "sudo chmod -R 777 #{release_path}/"
+  end
+
   task :restart, :roles => :app, :except => { :no_release => true } do
 
     run "#{try_sudo} touch #{File.join(current_path, 'tmp', 'restart.txt')}"    
@@ -64,6 +68,7 @@ namespace :deploy do
       run "cd #{release_path} && bundle exec rake assets:precompile RAILS_ENV=production"
     end
   end
+
 end
 
 

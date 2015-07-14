@@ -14,20 +14,44 @@
 #main {overflow: visible !important;}
 #layerslider.slideritems {
 	width: 100%;
-	height: 260px;
+	height: auto;
 }
 
-.ls-smartgroup a.ls-nav-prev, .ls-smartgroup a.ls-nav-next {width: 36px; height: 35px; display: block; position: absolute; bottom:20px; cursor: pointer; text-indent: -999em;}
-.ls-smartgroup a.ls-nav-next {right:0;bottom:0px; background:#454545 url(/assets/flex-next.png) no-repeat center center;}
+/*.ls-smartgroup a.ls-nav-prev, .ls-smartgroup a.ls-nav-next {width: 36px; height: 35px; display: block; position: absolute; bottom:20px; cursor: pointer; text-indent: -999em;}*/
+/*.ls-smartgroup a.ls-nav-next {right:0;bottom:0px; background:#454545 url(/assets/flex-next.png) no-repeat center center;}
 .ls-smartgroup a.ls-nav-next:hover{ background:#e58c00 url(/assets/flex-next.png) no-repeat center center;}
 
 .ls-smartgroup a.ls-nav-prev {right:37px;bottom:0px; background:#454545 url(/assets/flex-prev.png) no-repeat center center;}
 .ls-smartgroup a.ls-nav-prev:hover{  background:#e58c00 url(/assets/flex-prev.png) no-repeat center center;}
-
+*/
 .ls-layer h1{font-size:38px;  font-family:Arial, Helvetica, sans-serif; color:#FFF; font-weight:bold; margin-bottom:20px;}
 .ls-layer p{font-size:14px;  font-family:Arial, Helvetica, sans-serif; color:#716f6f; margin-bottom:20px;}
 
 #layerslider.slideritems img.ls-s2{left:50px;top:320px;}
 #layerslider.slideritems .ls-s3{left:51%;top:206px;background:#e58c00;padding:0px 20px 5px 20px;}
 #layerslider.slideritems .ls-s4{left:51%;top:265px;background:#FFF;padding:5px 10px 5px 10px;}
-	
+
+.ls-smartgroup a.ls-nav-next {right:0;bottom:0px; background:rgba(197, 201, 203, 0.6) url(/assets/flex-next.png) no-repeat center center;}
+.ls-smartgroup a.ls-nav-next:hover{ background:rgba(121, 125, 127, 0.6) url(/assets/flex-next.png) no-repeat center center;}
+
+.ls-smartgroup a.ls-nav-prev {right:37px;bottom:0px; background:rgba(197, 201, 203, 0.6) url(/assets/flex-prev.png) no-repeat center center;}
+.ls-smartgroup a.ls-nav-prev:hover{  background:rgba(121, 125, 127, 0.6) url(/assets/flex-prev.png) no-repeat center center;}
+/* LayerSlider Full Width Skin */
+.ls-smartgroup .ls-nav-prev,
+.ls-smartgroup .ls-nav-next {
+	width: 35px;
+	height: 35px;
+	z-index: 10000;
+	top: 50%;
+	margin-top: -25px;
+	border-radius: 20px;
+	position: absolute;
+}
+
+.ls-smartgroup .ls-nav-prev {
+	left: 5px;
+}
+
+.ls-smartgroup .ls-nav-next {
+	right: 10px !important;
+}
