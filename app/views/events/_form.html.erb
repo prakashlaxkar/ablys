@@ -10,6 +10,8 @@
       </ul>
     </div>
   <% end %>
+  <div class="field">(Type in Hindi. Press Ctrl+g to toggle between English and Hindi)</div>
+  <div style="clear:both;margin-top:10px;"></div>
 
   <div class="field">
     <%= f.label :title %>
@@ -35,7 +37,7 @@
     <%= f.button "Create Event" %>
     <%= link_to button_tag('cancel', type: "button"), events_path %>
   </div>
-   <div style="clear:both;"></div>  
+   <div style="clear:both;"></div>
 <% end %>
 <style type="text/css">
   select {width: 100px;}
