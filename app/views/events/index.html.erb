@@ -9,7 +9,12 @@
       <tbody>
         <tr style="font-size: 14px;">
           <td style="vertical-align: top;"><%= index + 1 %>.</td>
-          <td><%= link_to event.title.capitalize, event %></td>
+          <td>
+            <div><%= link_to event.title.capitalize, event %></div>
+            <div style="text-align:justify">
+              <span style="width:50px;"><%= event.start_date %> | </span><%= event.description.truncate(250) %>
+            </div>
+          </td>
         </tr>
       </tbody>
     </table>

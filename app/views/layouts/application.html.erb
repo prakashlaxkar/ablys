@@ -3,7 +3,7 @@
 <head>
   <title>Ablys</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <%= stylesheet_link_tag 	"application", media: "all" %>
+  <%= stylesheet_link_tag "application", media: "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   <script type="text/javascript">
@@ -41,7 +41,11 @@
       <div id="content">
       	<div class='menu'>
 	      	<div class="menu-inner" style="padding: 8px 1px;background-color:#BF0000;text-transform: none;font-size: 14px;margin-bottom: 0px;">
-	      		<marquee><span><%= Event.where(is_verify: true).order("updated_at desc").map{|x| x.title.capitalize}.join(' | ') %></span></marquee>
+	      		<marquee>
+              <% Event.where(is_verify: true).order("updated_at desc").each do |e| %>
+                <span class='marquee_link' data-id="<%=e.id %>" onmouseover="this.parentNode.stop();" onmouseout="this.parentNode.start();"><%= e.title.capitalize %></span> |
+              <% end %>
+            </marquee>
 	      	</div>
       	</div>
       	<div class="inner-part">
@@ -50,7 +54,7 @@
 		      	<div style="padding: 0 10px;">
 		      	<%- flash.each do |name, msg| -%>
 				    <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
-				  <%- end -%>  
+				  <%- end -%>
 		      		<%= yield %>
 		      	</div>
 		      </div>
@@ -79,6 +83,9 @@
 			$("#flash_alert, #flash_notice").click(function() {
 				$(this).hide();
 			});
+      $(".marquee_link").click(function(){
+        window.location.href =  "/events/"+$(this).data('id');
+      })
 		</script>
 </body>
 </html>
