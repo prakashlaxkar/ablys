@@ -17,7 +17,7 @@ module ApplicationHelper
 
   def three_pannel
     if params[:controller] == "events"
-      return true
+      params[:action] == 'galary' ? (return false) : (return true)
     else
       routes = ['/', "/users/sign_up", "/contact_us", "/users/sign_in"]
       routes.include? request.path

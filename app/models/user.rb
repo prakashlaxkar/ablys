@@ -1,13 +1,15 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable, :recoverable, :rememberable, 
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable,
          :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook], :authentication_keys => [:login]
 
   default_scope order(created_at: :desc)
-  
+
   has_attached_file :avatar, :styles => { :large => "512x512", :normal => "360x360", :medium => "300x300>", :thumb => "150x150>" }, :default_url => "/avatars/:style/missing.png"
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
+  validates_attachment_size :avatar, :less_than => 5.megabytes, :message => " : Uploading photo size should be less then 5 MB."
+  has_many :events, dependent: :destroy
 
   validates :name, :dob, :f_name, :gender, :avatar, :gotra, :address, :city, :state, :phone, :pin_code, :marital_status, :qualification, :presence => true
   validates :username,
@@ -15,9 +17,9 @@ class User < ActiveRecord::Base
     :uniqueness => {
       :case_sensitive => false
     }
-    
+
   before_save :add_country
-  before_validation :create_email 
+  before_validation :create_email
   attr_accessor :login
 
   def self.find_for_oauth(oauth_raw_data, oauth_user_data, signed_in_resource=nil )
