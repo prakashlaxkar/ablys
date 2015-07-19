@@ -1,16 +1,16 @@
 <div class="full" style="padding: 10px 0;">
   <div class="flexslider kp-gallery-slider">
     <ul class="slides">
-    <% @events.each do |event| %>
-      <% event.images.each do |image| %>
-        <li>
-          <div class="mask">
-            <a href="<%= image.avatar.url() %>" rel="prettyPhoto[kp-gallery]">
-             <%= image_tag(image.avatar.url())%>
-            </a>
-          </div>
-        </li>
-      <% end %>
+      <% @events.each do |event| %>
+        <% event.images.each do |image| %>
+          <li>
+            <div class="mask">
+              <a href="<%= image.avatar.url() %>" rel="prettyPhoto[kp-gallery]">
+               <%= image_tag(image.avatar.url(), height: '500')%>
+              </a>
+            </div>
+          </li>
+        <% end %>
       <% end %>
     </ul>
   </div>
@@ -30,5 +30,5 @@
 <style type="text/css">
   .flexslider.kp-gallery-carousel .slides img{height: 98px;}
   .kp-gallery-carousel .slides li {width: 158px !important;}
-  .flex-viewport { max-height: 400px !important; }
+  .flex-viewport { max-height: 500px !important; }
 </style>
