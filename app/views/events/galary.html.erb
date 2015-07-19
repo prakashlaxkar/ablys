@@ -1,42 +1,34 @@
-<form >
-  <div class="full">
-    <div class="flexslider kp-gallery-slider">
-
-      <ul class="slides">
-      <% @events.each do |event| %>
-        <% event.images.each do |image| %>
-          <li>
-            <div class="mask">
-              <a href="<%= image.avatar.url() %>" rel="prettyPhoto[kp-gallery]">
-               <%= image_tag(image.avatar.url())%>
-              </a>
-            </div>
-            <div class="kp-gallery-caption">
-              featuredImageDetail
-            </div>
-          </li>
-
-        <% end %>
-        <% end %>
-
-      </ul>
-
-    </div>
-    <div class="flexslider kp-gallery-carousel">
-
-      <ul class="slides">
-      <% @events.each do |event| %>
-        <% event.images.each do |image| %>
-          <li>
-            <%= image_tag(image.avatar.url(), size:"370x350" )%>
-          </li>
-        <% end %>
-        <% end %>
-
-      </ul>
-
-
-    </div>
+<div class="full" style="padding: 10px 0;">
+  <div class="flexslider kp-gallery-slider">
+    <ul class="slides">
+    <% @events.each do |event| %>
+      <% event.images.each do |image| %>
+        <li>
+          <div class="mask">
+            <a href="<%= image.avatar.url() %>" rel="prettyPhoto[kp-gallery]">
+             <%= image_tag(image.avatar.url())%>
+            </a>
+          </div>
+        </li>
+      <% end %>
+      <% end %>
+    </ul>
   </div>
+  <div class="flexslider kp-gallery-carousel">
+    <ul class="slides">
+    <% @events.each do |event| %>
+      <% event.images.each do |image| %>
+        <li>
+          <%= image_tag(image.avatar.url(), size: "130x100")%>
+        </li>
+      <% end %>
+      <% end %>
+    </ul>
+  </div>
+</div>
 
-</form>
+<style type="text/css">
+  .flexslider.kp-gallery-carousel .slides img{height: 98px;}
+  .kp-gallery-carousel .slides li {width: 158px !important;}
+  .flex-viewport { max-height: 400px !important; }
+</style>
