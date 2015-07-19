@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index, :ablys_members, :matrimony_list, :ncc_members, :get_cities]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  caches_page :index, :matrimony_list, :show, :ablys_members
 
   # GET /users
   # GET /users.json
@@ -90,7 +91,7 @@ class UsersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:name, :dob, :f_name, :gender, :email, :address, :city, :state, :country, :pin_code, :phone, :is_matrimony, :avatar,
-        :gotra, :marital_status, :qualification, :designation, :company_name, :income, 
+        :gotra, :marital_status, :qualification, :designation, :company_name, :income,
         :username)
     end
 end

@@ -51,6 +51,8 @@ end
 gem 'capistrano', '~> 2.15.5'
 gem "non-stupid-digest-assets"
 gem 'pry'
+gem 'actionpack-page_caching'
+gem 'actionpack-action_caching'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
