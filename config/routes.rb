@@ -2,12 +2,15 @@ Ablys::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users
-  
+
   resource :home
 
   resources :events do
     resources :videos
     resources :images
+    collection do
+      get 'galary'
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

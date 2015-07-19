@@ -1,0 +1,42 @@
+<form >
+  <div class="full">
+    <div class="flexslider kp-gallery-slider">
+
+      <ul class="slides">
+      <% @events.each do |event| %>
+        <% event.images.each do |image| %>
+          <li>
+            <div class="mask">
+              <a href="<%= image.avatar.url() %>" rel="prettyPhoto[kp-gallery]">
+               <%= image_tag(image.avatar.url())%>
+              </a>
+            </div>
+            <div class="kp-gallery-caption">
+              featuredImageDetail
+            </div>
+          </li>
+
+        <% end %>
+        <% end %>
+
+      </ul>
+
+    </div>
+    <div class="flexslider kp-gallery-carousel">
+
+      <ul class="slides">
+      <% @events.each do |event| %>
+        <% event.images.each do |image| %>
+          <li>
+            <%= image_tag(image.avatar.url(), size:"370x350" )%>
+          </li>
+        <% end %>
+        <% end %>
+
+      </ul>
+
+
+    </div>
+  </div>
+
+</form>

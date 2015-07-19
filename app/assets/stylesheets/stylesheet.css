@@ -533,13 +533,13 @@ body
 	font-size: 11px;
 	color: #000000;
 	font-family: Verdana;
-	
+
 }
 
 img
 {
 	border: none;
-	
+
 }
 
 h1, h2, h3, h4, h5, h6, p, div, span, td, ul, li
@@ -843,7 +843,7 @@ padding-bottom: 2px;
 }
 #outerslider
 {
-	background-color: #BF0000;	
+	background-color: #BF0000;
 }
 
 /*Content Start*/
@@ -999,7 +999,7 @@ h6 {
   color: inherit;
   text-rendering: optimizelegibility;
 }
-    
+
 
 .news-list
 {
@@ -1220,7 +1220,7 @@ h6 {
         width: 141px;
         height: 131px;
         float: left;
-        
+
         border-radius:5px;
         background-color:#BF0000;
         padding: 4px;
@@ -2530,7 +2530,7 @@ h6 {
 	font-weight: bold;
 	padding-top: 20px;
 	font-size: 20px;
-	
+
 }
 .resulttitle2
 {
@@ -2741,7 +2741,7 @@ h6 {
 {
 	margin: 10px;
 	padding: 2px;
-	
+
 }
 .read				{
 	text-decoration: none;
@@ -2769,13 +2769,13 @@ h6 {
 	width: 200px;
 	margin-top: 15px;
 	padding-left: 10px;
-	
+
 }
 .time {
 	font-size: 16px;
 	color: #1F3485;
 	font-weight: bolder;
-	
+
 }
 .call {
 	font-size: 16px;
@@ -2809,7 +2809,7 @@ h6 {
 }
 .boxheading {
 	background-color: #029141;
-	
+
 	font-size: 18px;
 	clear: both;
 }
@@ -2840,7 +2840,7 @@ h6 {
 .boxborder1
 {
 	border: 2px solid #029141;
-	padding-left: 10px;	
+	padding-left: 10px;
 }
 .boxfont
 {
@@ -2849,7 +2849,7 @@ h6 {
 	font-weight: bold;
 	color: #FA351E;
 	text-align: center;
-	
+
 }
 .boxfont1
 {
@@ -2858,7 +2858,7 @@ h6 {
 	font-weight: bold;
 	color: #FFF;
 	text-align: center;
-	
+
 }
 #visionbox {
 	width: 200px;
@@ -2897,4 +2897,105 @@ h6 {
 .news .boxcotent ul li a {
 	display: block;
 	color: #000000;
+}
+
+/* galary.css -------------------------------*/
+
+.entry-box .entry-title {
+  font-size:30px;
+  margin:0 0 10px;
+  color:#333;
+  line-height:28px;
+}
+
+.entry-box .social-link {
+  border:1px solid #e1e1e1;
+  padding:10px 25px;
+  margin-bottom:2px;
+}
+.entry-box .social-link li {
+  list-style:none;
+  float:left;
+  color: #333;
+  font-size:13px;
+  margin:0 0 0 15px;
+}
+.entry-box .social-link li:first-child {
+  margin:0;
+}
+.entry-box .social-link li a {
+  color:#000;
+  font-size:14px;
+}
+
+.entry-box p {
+  margin-bottom:20px;
+}
+
+.entry-box footer p {
+  border:1px solid #e1e1e1;
+
+  padding:15px;
+  margin:0;
+  width:250px;
+  text-align:center;
+  height:107px;
+  overflow:hidden;
+}
+.entry-box footer p.prev-post {
+  margin-right:2px;
+    float:left;
+}
+.entry-box footer p.next-post {
+  margin-left:1px;
+}
+.entry-box footer p a {
+  color:#e03d3d;
+  font-size:18px;
+  font-family: 'Rokkitt', serif;
+  display:block;
+  margin-bottom:15px;
+}
+.entry-box footer p a:hover {
+  color:#414141;
+}
+.entry-box footer p a.article-title {
+  font-size:20px;
+  font-family: 'Rokkitt', serif;
+  color:#414141;
+  line-height:24px;
+  margin-bottom:0;
+}
+.article-list li {
+  list-style:none;
+  border-bottom:1px solid #ebebeb;
+  padding-bottom:25px;
+  margin-bottom:25px;
+}
+.article-list li .entry-item .entry-thumb {
+  float:left;
+  margin-right:25px;
+  position:relative;
+}
+.article-list li .entry-item .entry-thumb .meta-box {
+  position:absolute;
+  bottom:0;
+  left:0;
+  background-color:#1c1c1c;
+  background-color:rgba(0,0,0,.7);
+  padding:5px 0;
+  width:100%;
+}
+.article-list li .entry-item .entry-thumb > a,
+.article-list li .entry-item .entry-thumb > a > img {
+  display:block;
+  width:100%;
+}
+a,
+.kp-gallery-carousel .slides li
+ {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
