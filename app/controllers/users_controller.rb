@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index, :ablys_members, :matrimony_list, :ncc_members, :get_cities]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  caches_page :index, :matrimony_list, :show, :ablys_members
+  caches_page :show
 
   # GET /users
   # GET /users.json

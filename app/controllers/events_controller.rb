@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show, :galary]
   before_action :set_event, only: [:show, :edit, :update, :destroy]
-  caches_page :index, :galary, :show
+  caches_page :show
 
   respond_to :html
 
