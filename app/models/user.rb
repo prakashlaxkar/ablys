@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :recoverable, :rememberable,
          :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook], :authentication_keys => [:login]
 
-  default_scope order(created_at: :desc)
+  default_scope order(updated_at: :desc)
 
   has_attached_file :avatar, :styles => { :large => "512x512", :normal => "360x360", :medium => "300x300>", :thumb => "150x150>" }, :default_url => "/avatars/:style/missing.png"
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/

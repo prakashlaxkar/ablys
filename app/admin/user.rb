@@ -1,7 +1,7 @@
 ActiveAdmin.register User do
   permit_params :name, :dob, :f_name, :gender, :email, :address, :city, :state, :country, :pin_code, :is_ncc_member,
   :phone, :is_matrimony, :avatar, :gotra, :marital_status, :qualification, :designation, :company_name, :income,
-  :membership, :is_active, :username, :password
+  :membership, :is_active, :username, :password, :serial_number, :is_ablys_member
 
   index do
     selectable_column
@@ -53,9 +53,11 @@ ActiveAdmin.register User do
       f.input :pin_code
       f.input :marital_status, as: :select, collection: ["Single", "Married", "Divorced", "Widow"]
       f.input :is_matrimony
+      f.input :serial_number
       f.input :is_ncc_member
-      f.input :is_active
+      f.input :is_ablys_member
       f.input :membership, as: :select, collection: ["Lifetime", "Yearly"], include_blank: "Select Membership"
+      f.input :is_active
       f.input :qualification
       f.input :designation
       f.input :company_name
@@ -85,6 +87,9 @@ ActiveAdmin.register User do
         row :pin_code
         row :marital_status
         row :is_ncc_member
+        row :serial_number
+        row :is_ablys_member
+        row :membership
         row :is_matrimony
         row :qualification
         row :designation

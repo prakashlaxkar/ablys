@@ -12,7 +12,7 @@ class EventsController < ApplicationController
   end
 
   def galary
-    @events = Event.order("updated_at desc")
+    @events = Event.where(is_verify: true).order("updated_at desc")
   end
 
   def show
