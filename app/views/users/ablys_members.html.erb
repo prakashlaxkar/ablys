@@ -3,9 +3,9 @@
     <thead>
       <th width="5%">No.</th>
       <th width="30%">Name</th>
-      <th width="15%">Membership</th>
       <th width="15%">City</th>
-      <th width="18%">State</th>
+      <th width="15%">Membership</th>
+      <th width="18%">Serial Number</th>
       <th width="17%">Mobile Number</th>
     </thead>
     <tbody>
@@ -13,9 +13,9 @@
         <tr>
           <td><%= index + 1 %></td>
           <td><%= link_to "Mr. #{user.name}", user_path(user.id) %></td>
-          <td><%= user.membership %></td>
           <td><%= user.city %></td>
-          <td><%= user.state %></td>
+          <td><%= user.membership %></td>
+          <td><%= user.serial_number %></td>
           <td><%= user.phone %></td>
         </tr>
       <% end %>

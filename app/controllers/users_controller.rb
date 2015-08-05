@@ -22,7 +22,7 @@ class UsersController < ApplicationController
   end
 
   def ablys_members
-    @users = User.where(is_ncc_member: true).reorder("is_active desc")
+    @users = User.where(is_ablys_member: true).reorder("is_active desc")
   end
 
   # GET /users/1/edit
@@ -92,6 +92,6 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:name, :dob, :f_name, :gender, :email, :address, :city, :state, :country, :pin_code, :phone, :is_matrimony, :avatar,
         :gotra, :marital_status, :qualification, :designation, :company_name, :income,
-        :username)
+        :username, :serial_number)
     end
 end

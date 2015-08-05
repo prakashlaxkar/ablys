@@ -1,7 +1,13 @@
-<%= form_for @user, :html => { :class => 'user_form' } do |f| %>  
+<%= form_for @user, :html => { :class => 'user_form' } do |f| %>
   <div style="color:red;">
     <%= devise_error_messages! %>
   </div>
+  <div style="clear:both;"></div>
+  <div class="left_box">
+    <%= f.label :serial_number %>
+    <%= f.text_field :serial_number %>
+  </div>
+  <div style="clear:both;"></div>
 
   <div class="left_box">
     <%= f.label :name %>
@@ -98,7 +104,7 @@
     <span> Do you want to registor for matrimony </span>
     <%= radio_button("user", "is_matrimony", true) %><span> Yes </span><%= radio_button("user", "is_matrimony", false) %><span> No</span>
   </div>
-   
+
 <div style ="float:left;margin-bottom:50px;">
   <%= f.button "Update Profile" %>
   <%= link_to button_tag('cancel', type: "button"), root_path %>
