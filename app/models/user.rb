@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
     }
 
   before_save :add_country
-  before_validation :create_email
+  before_save :create_email
   attr_accessor :login
 
   def self.find_for_oauth(oauth_raw_data, oauth_user_data, signed_in_resource=nil )
