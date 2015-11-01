@@ -15,6 +15,7 @@ namespace :users do
         u.gender = fields[3]
         u.gotra = fields[4]
         u.marital_status = fields[5]
+        u.is_matrimony = true if fields[5] == 'Single'
         u.membership = fields[6]
         u.qualification = fields[7]
         u.designation = fields[8]
