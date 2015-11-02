@@ -10,7 +10,7 @@ namespace :users do
         u = User.new
         u.serial_number = fields[0].to_i
         u.name = fields[1]
-        u.username = fields[1]
+        u.username = fields[1].split(" ").first + fields[14][7..9]
         u.f_name = fields[2]
         u.gender = fields[3]
         u.gotra = fields[4]
@@ -27,10 +27,12 @@ namespace :users do
         u.phone = fields[14]
         u.country = "India"
         u.password = "123456789"
-        f =  File.open("./db/ablys/#{fields[0].to_i}.jpg")
-        u.avatar = f
+        if File.exists?("./db/ablys/#{fields[0].to_i}.jpg")
+            f =  File.open("./db/ablys/#{fields[0].to_i}.jpg")
+            u.avatar = f
+            f.close
+        end
         u.save(validate: false)
-        f.close
         puts "User created for #{u.serial_number} ====================="
         p u
       else
