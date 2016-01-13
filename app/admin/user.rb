@@ -27,6 +27,8 @@ ActiveAdmin.register User do
   filter :f_name
   filter :gender
   filter :is_ncc_member
+  filter :is_ablys_member
+  filter :membership
   filter :marital_status
   filter :city
   filter :state
