@@ -18,7 +18,7 @@ Ablys::Application.configure do
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
-  config.i18n.available_locales = ['es-CO', :hi]
+  config.i18n.available_locales = ['es-CO', :hi, :en]
   Paperclip.options[:command_path] = "/usr/bin/"
 
   # Raise an error on page load if there are pending migrations

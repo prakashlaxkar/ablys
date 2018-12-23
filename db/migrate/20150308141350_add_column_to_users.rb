@@ -1,4 +1,4 @@
-class AddColumnToUsers < ActiveRecord::Migration
+class AddColumnToUsers < ActiveRecord::Migration[5.2]
   def change
   	add_column :users, :gotra, :string
   	add_column :users, :marital_status, :string

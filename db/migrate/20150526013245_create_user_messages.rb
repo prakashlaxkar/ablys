@@ -1,4 +1,4 @@
-class CreateUserMessages < ActiveRecord::Migration
+class CreateUserMessages < ActiveRecord::Migration[5.2]
   def change
     create_table :user_messages do |t|
       t.string :email
