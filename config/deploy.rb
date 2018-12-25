@@ -19,16 +19,17 @@ default_run_options[:pty] = true  # Forgo errors when deploying from windows
 default_run_options[:shell] = '/bin/bash --login'
 
 ssh_options[:keys] = %w(/Path/To/id_rsa)
+# ssh_options[:verbose]=:debug
 
 after "deploy:update_code", "deploy:copy_configs"
 
 task :prod do
-  set :domain, "52.10.40.52"
+  set :domain, "52.15.243.76"
   set :repository, "git@github.com:prakashlaxkar/ablys.git"
   set :local_repository, "git@github.com:prakashlaxkar/ablys.git"
   set :branch, "master"
   set :scm_verbose, true
-  server "52.10.40.52", :app, :web, :db, :primary => true
+  server "52.15.243.76", :app, :web, :db, :primary => true
   set :deploy_env, "prod"
 
   "deploy"
